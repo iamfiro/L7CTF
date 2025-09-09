@@ -1,0 +1,53 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-6;
+  border: 0;
+  background-color: $surface-brand-default;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+
+  span {
+    color: $text-black !important;
+  }
+
+  &:active {
+    background-color: $surface-brand-heavy;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // Size variants
+  &--md {
+    padding: $spacing-8 $spacing-14;
+    border-radius: $radius-8;
+  }
+
+  &--lg {
+    padding: $spacing-16 $spacing-24;
+    font-size: 16px;
+    line-height: 1.4;
+    min-height: 48px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__leading-icon,
+  &__trailing-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
