@@ -1,35 +1,23 @@
+import { Typo } from "@/components/ui";
+import Spacing from "@/components/ui/spacing";
+
 import s from "./style.module.scss";
 
 export default function Hero() {
   return (
     <section className={s.hero}>
-      <img
-        className={s.hero_member}
-        src="/images/hero/layer7_member.png"
-        alt="Layer7 CTF"
-      />
       <div className={s.hero_text}>
-        <div>
-          <span>2025</span>
-          <span>WE Hack THE</span>
+        <div className={s.hero_text_title}>
+          <h2>We hack the</h2>
+          <h1>2025 Layer7 CTF</h1>
         </div>
-        {/* <img src="/hero_text_3half.svg" alt="Layer7 CTF" /> */}
-        <img
-          className={s.title_image}
-          src="/images/hero/hero_text_2half.svg"
-          alt="Layer7 CTF"
-        />
-        <img
-          className={s.title_image}
-          src="/images/hero/hero_text_half.svg"
-          alt="Layer7 CTF"
-        />
-        <img
-          className={s.title_image}
-          src="/images/hero/hero_text.svg"
-          alt="Layer7 CTF"
-        />
+        <Typo.Headline className={s.hero_text_date}>
+          2025.11.24 - 선린인터넷고등학교
+        </Typo.Headline>
       </div>
+      <Spacing size={150} />
+      <img src="/images/hero/map.svg" alt="Layer7 CTF" className={s.hero_map} />
+      <div className={s.hero_map_overlay} />
     </section>
   );
 }

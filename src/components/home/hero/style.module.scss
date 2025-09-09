@@ -1,43 +1,62 @@
 .hero {
     width: 100%;
-    height: calc(100vh - 80px);
 
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
+    align-items: center;
 
-    gap: $spacing-20;
-
-    padding: $padding;
-
-
-    div {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-    span {
-        font-size: 52px;
-        text-transform: uppercase;
-    }
-
-
-}
-
-.hero_member {
-    width: 100%;
-    height: 200px;
-
-    object-fit: cover;
-}
-
-.title_image {
-    width: 100%;
+    padding: $spacing-48 $padding;
 }
 
 .hero_text {
     display: flex;
     flex-direction: column;
-    gap: $spacing-20;
+    align-items: center;
+    gap: $spacing-32;
+
+
+    .hero_text_title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $spacing-8;
+
+        h1, h2 {
+            font-weight: 400;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 78px;
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+    }
+
+    .hero_text_date {
+        color: $text-subtle;
+    }
+}
+
+.hero_map {
+    width: 100%;
+    height: 420px;
+    object-fit: contain;
+    position: relative;
+
+    opacity: 0.4;
+}
+
+.hero_map_overlay {
+    width: 100%;
+    height: 130px;
+
+    margin-top: -130px;
+
+    background: linear-gradient(to bottom, transparent, $surface-default);
+
+    z-index: 1;
 }

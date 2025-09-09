@@ -1,0 +1,29 @@
+.sponsor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-48;
+
+    padding-inline: $spacing-32;
+}
+
+.sponsor_text {
+    color: $text-subtle;
+}
+
+.sponsor_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-24;
+}
+
+.layer7 {
+    width: 45px;
+    aspect-ratio: 1/1;
+}
+
+.sunrin {
+    width: 50px;
+    aspect-ratio: 1/1;
+}

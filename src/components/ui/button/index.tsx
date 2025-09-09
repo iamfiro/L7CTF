@@ -29,7 +29,7 @@ export default function Button({
   const sizeClass = styles[`button--${size}`];
   const variantClass = styles[`button--${variant}`];
   const disabledClass = disabled ? styles["button--disabled"] : "";
-  const Text = size === "lg" ? Typo.Body : Typo.Body;
+  const Text = size === "lg" ? Typo.Body : Typo.Subtext;
   return (
     <button
       className={`${styles.button} ${sizeClass} ${variantClass} ${disabledClass} ${className}`}
