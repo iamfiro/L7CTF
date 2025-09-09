@@ -1,0 +1,43 @@
+.hero {
+    width: 100%;
+    height: calc(100vh - 80px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: $spacing-20;
+
+    padding: $padding;
+
+
+    div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    span {
+        font-size: 52px;
+        text-transform: uppercase;
+    }
+
+
+}
+
+.hero_member {
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+}
+
+.title_image {
+    width: 100%;
+}
+
+.hero_text {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-20;
+}

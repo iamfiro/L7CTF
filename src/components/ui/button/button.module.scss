@@ -1,10 +1,11 @@
+@import "../../../styles/variables.scss";
+
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: $spacing-6;
+  gap: $spacing-4;
   border: 0;
-  background-color: $surface-brand-default;
   cursor: pointer;
   transition: all 0.2s ease;
   outline: none;
@@ -21,6 +22,32 @@
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
+  }
+
+  // Variant styles
+  &--primary {
+    background-color: $surface-brand-default;
+    
+    &:active {
+      background-color: $surface-brand-heavy;
+    }
+  }
+
+  &--secondary {
+    background-color: $surface-subtle;
+    
+    span {
+      color: $text-default !important;
+    }
+    
+    &:hover:not(:disabled) {
+      background-color: $surface-subtle;
+      border-color: $text-brand-default;
+    }
+    
+    &:active {
+      background-color: $surface-subtle;
+    }
   }
 
   // Size variants

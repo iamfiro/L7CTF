@@ -8,6 +8,7 @@ import styles from "./button.module.scss";
 interface ButtonProps {
   children: React.ReactNode;
   size?: "lg" | "md";
+  variant?: "primary" | "secondary";
   leadingIcon?: LucideIcon;
   trailingIcon?: LucideIcon;
   onClick?: () => void;
@@ -18,6 +19,7 @@ interface ButtonProps {
 export default function Button({
   children,
   size = "md",
+  variant = "primary",
   leadingIcon: LeadingIcon,
   trailingIcon: TrailingIcon,
   onClick,
@@ -25,11 +27,12 @@ export default function Button({
   className = "",
 }: ButtonProps) {
   const sizeClass = styles[`button--${size}`];
+  const variantClass = styles[`button--${variant}`];
   const disabledClass = disabled ? styles["button--disabled"] : "";
   const Text = size === "lg" ? Typo.Body : Typo.Body;
   return (
     <button
-      className={`${styles.button} ${sizeClass} ${disabledClass} ${className}`}
+      className={`${styles.button} ${sizeClass} ${variantClass} ${disabledClass} ${className}`}
       onClick={onClick}
       disabled={disabled}
     >
