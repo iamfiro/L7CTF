@@ -1,0 +1,20 @@
+.footer {
+    width: min(100%, $max-width);
+
+    padding: $spacing-100 $padding;
+    margin: 0 auto;
+}
+
+.footer_address {
+    color: $text-subtle;
+}
+
+.footer_social {
+    margin-top: $spacing-16;
+    
+    img {
+        width: 24px;
+        height: 24px;
+        fill: $text-subtle;
+    }
+}

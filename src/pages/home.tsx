@@ -1,5 +1,6 @@
 import { Calendar, Hero, Sponsor } from "@/components/home";
 import { Header } from "@/components/ui";
+import Footer from "@/components/ui/footer";
 import Spacing from "@/components/ui/spacing";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <Sponsor />
       <Calendar />
+      <Footer />
       <span>asd</span>
     </>
   );
