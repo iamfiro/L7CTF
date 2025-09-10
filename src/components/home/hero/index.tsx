@@ -1,20 +1,20 @@
 import { Button, Typo } from "@/components/ui";
 import Spacing from "@/components/ui/spacing";
-import { HStack } from "@/components/ui/stack";
+import { HStack, VStack } from "@/components/ui/stack";
 
 import s from "./style.module.scss";
 
 export default function Hero() {
   return (
     <section className={s.hero}>
-      <div className={s.hero_light} />
-      <div className={s.hero_light_sub} />
-      <div className={s.hero_light_third} />
+      <div className={s.light} />
+      <div className={s.light_center} />
+      <div className={s.light_right} />
       <div className={s.hero_text}>
-        <div className={s.hero_text_title}>
-          <h2>We hack the</h2>
-          <h1>2025 Layer7 CTF</h1>
-        </div>
+        <VStack gap={12}>
+          <h2 className={s.hero_subtitle}>We hack the</h2>
+          <h1 className={s.hero_title}>2025 Layer7 CTF</h1>
+        </VStack>
         <Typo.BodyLarge className={s.hero_text_date}>
           2025.11.24 - 선린인터넷고등학교
         </Typo.BodyLarge>

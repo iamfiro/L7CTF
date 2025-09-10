@@ -11,7 +11,7 @@ export default function Footer() {
         <Typo.Body className={s.footer_address}>
           서울특별시 용산구 원효로97길 33-4
         </Typo.Body>
-        <HStack className={s.footer_social}>
+        <HStack className={s.footer_social_wrap}>
           <a href="#">
             <img src="/svg/instagram.svg" alt="instagram" />
           </a>

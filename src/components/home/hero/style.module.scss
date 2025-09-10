@@ -14,29 +14,21 @@
     align-items: center;
     gap: $spacing-32;
 
+    .hero_title, .hero_subtitle {
+        font-weight: 400;
+        letter-spacing: -2px;
+        text-transform: uppercase;
+    }
 
-    .hero_text_title {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: $spacing-12;
+    .hero_title {
+        font-size: 78px;
 
-        h1, h2 {
-            font-weight: 400;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-        }
+        z-index: 99;
+    }
 
-        h1 {
-            font-size: 78px;
-
-            z-index: 99;
-        }
-
-        h2 {
-            font-size: 40px;
-            letter-spacing: 2px;
-        }
+    .hero_subtitle {
+        font-size: 40px;
+        letter-spacing: 2px;
     }
 
     .hero_text_date {
@@ -69,7 +61,7 @@
     margin-top: $spacing-16;
 }
 
-.hero_light {
+.light {
     background-color: #CDD8FF;
     width: 50px;
     height: 600px;
@@ -84,7 +76,7 @@
     left: 150px;
 }
 
-.hero_light_sub, .hero_light_third {
+.light_center, .light_right {
     background-color: #464646;
     width: 100px;
     height: 400px;
@@ -99,15 +91,14 @@
     left: 600px;
 }
 
-.hero_light2 {
+.light_center {
     width: 10px;
     background-color: white;
-    mix-blend-mode: hard-light;
 
     filter: blur(80px);
 }
 
-.hero_light_third {
+.light_right {
     background-color: #6d6d6d;
     left: 1100px;
 }
