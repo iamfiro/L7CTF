@@ -1,5 +1,3 @@
-@import "../../../styles/variables.scss";
-
 .button {
   display: inline-flex;
   align-items: center;
@@ -10,12 +8,12 @@
   transition: all 0.2s ease;
   outline: none;
 
-  span {
-    color: $text-black !important;
+  &:active {
+    transform: scale(0.95);
   }
 
-  &:active {
-    background-color: $surface-brand-heavy;
+  span {
+    color: $text-black !important;
   }
 
   &--disabled {
@@ -27,10 +25,6 @@
   // Variant styles
   &--primary {
     background-color: $surface-white;
-    
-    &:active {
-      background-color: $surface-brand-heavy;
-    }
   }
 
   &--secondary {

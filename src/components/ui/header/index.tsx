@@ -12,16 +12,16 @@ export default function Header() {
       <div className={s.wrap}>
         <ul className={s.header_menu}>
           <li>
-            <a href="#">
+            <a href="#" data-active={true}>
               <Typo.Body>CTF</Typo.Body>
             </a>
-            <a href="#">
+            <a href="#" data-active={false}>
               <Typo.Body>Layer7</Typo.Body>
             </a>
-            <a href="#">
+            <a href="#" data-active={false}>
               <Typo.Body>Winners</Typo.Body>
             </a>
-            <a href="#">
+            <a href="#" data-active={false}>
               <Typo.Body>Discord</Typo.Body>
               <ArrowUpRight />
             </a>

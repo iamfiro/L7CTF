@@ -9,6 +9,7 @@ export default function Hero() {
     <section className={s.hero}>
       <div className={s.hero_light} />
       <div className={s.hero_light_sub} />
+      <div className={s.hero_light_third} />
       <div className={s.hero_text}>
         <div className={s.hero_text_title}>
           <h2>We hack the</h2>
@@ -21,7 +22,7 @@ export default function Hero() {
           <Button size="lg" variant="secondary">
             문의하기
           </Button>
-          <Button size="lg">대회 참가 신청하기</Button>
+          <Button size="lg">Layer7 CTF 참가 신청하기</Button>
         </HStack>
       </div>
       <Spacing size={150} />

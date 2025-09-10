@@ -29,10 +29,13 @@
 
         h1 {
             font-size: 78px;
+
+            z-index: 99;
         }
 
         h2 {
             font-size: 40px;
+            letter-spacing: 2px;
         }
     }
 
@@ -67,13 +70,13 @@
 }
 
 .hero_light {
-    background-color: #D9D9D9;
+    background-color: #CDD8FF;
     width: 50px;
     height: 600px;
 
     border-radius: $radius-full;
 
-    filter: blur(130px);
+    filter: blur(100px);
     transform: rotate(-35deg);
 
     position: absolute;
@@ -81,8 +84,8 @@
     left: 150px;
 }
 
-.hero_light_sub {
-    background-color: #3C3C3C;
+.hero_light_sub, .hero_light_third {
+    background-color: #464646;
     width: 100px;
     height: 400px;
 
@@ -94,4 +97,17 @@
     position: absolute;
     top: -100px;
     left: 600px;
+}
+
+.hero_light2 {
+    width: 10px;
+    background-color: white;
+    mix-blend-mode: hard-light;
+
+    filter: blur(80px);
+}
+
+.hero_light_third {
+    background-color: #6d6d6d;
+    left: 1100px;
 }

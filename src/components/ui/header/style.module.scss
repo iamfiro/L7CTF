@@ -44,6 +44,12 @@
             display: flex;
             gap: 2px;
 
+            &[data-active="true"] {
+                span, svg {
+                    color: $text-default;
+                }
+            }
+
             span, svg {
                 color: $text-subtle;
             }

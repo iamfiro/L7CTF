@@ -12,7 +12,6 @@ export default function Home() {
       <Sponsor />
       <Calendar />
       <Footer />
-      <span>asd</span>
     </>
   );
 }
