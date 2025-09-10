@@ -26,7 +26,7 @@
 
   // Variant styles
   &--primary {
-    background-color: $surface-brand-default;
+    background-color: $surface-white;
     
     &:active {
       background-color: $surface-brand-heavy;
@@ -43,6 +43,10 @@
     &:hover:not(:disabled) {
       background-color: $surface-subtle;
       border-color: $text-brand-default;
+    }
+
+    svg {
+      color: $text-default !important;
     }
     
     &:active {

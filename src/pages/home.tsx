@@ -1,13 +1,15 @@
-import { Hero } from "@/components/home";
-import Sponsor from "@/components/home/sponsor";
-import { Button, Header } from "@/components/ui";
+import { Calendar, Hero, Sponsor } from "@/components/home";
+import { Header } from "@/components/ui";
+import Spacing from "@/components/ui/spacing";
 
 export default function Home() {
   return (
     <>
+      <Spacing size={64} />
       <Header />
       <Hero />
       <Sponsor />
+      <Calendar />
       <span>asd</span>
     </>
   );
