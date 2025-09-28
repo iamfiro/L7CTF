@@ -2,8 +2,8 @@ import {
   Calendar,
   CompetitionAbout,
   FormAbout,
+  Gallery,
   Hero,
-  Merit,
   Money,
   Sponsor,
 } from "@/components/home";
@@ -22,7 +22,7 @@ export default function Home() {
       <FormAbout />
       <CompetitionAbout />
       <Money />
-      <Merit />
+      <Gallery />
       <Footer />
     </>
   );
