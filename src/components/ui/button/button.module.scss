@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: $spacing-4;
+  gap: $spacing-8;
 
   border: 0;
 
@@ -58,7 +58,7 @@
   }
 
   &--lg {
-    padding: $spacing-16 $spacing-24;
+    padding: $spacing-12 $spacing-16;
     font-size: 16px;
     line-height: 1.4;
     min-height: 48px;

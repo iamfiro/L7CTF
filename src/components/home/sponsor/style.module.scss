@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: $spacing-48;
+    gap: $spacing-64;
 
     padding-inline: $spacing-32;
 }
@@ -15,15 +15,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: $spacing-24;
+    gap: $spacing-32;
 }
 
-.layer7 {
-    width: 45px;
+.layer7, .sunrin {
+    width: 30px;
     aspect-ratio: 1/1;
 }
 
-.sunrin {
-    width: 50px;
-    aspect-ratio: 1/1;
+.sponsor_title {
+    border-radius: $radius-10;
+    padding: $radius-8 $radius-14;
+
+    span {
+        color: $text-black;
+    }
+}
+
+.diamond {
+    background: #B1BFFF;
+}
+
+.gold {
+    background: #E3D057;
 }

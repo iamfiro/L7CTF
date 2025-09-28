@@ -36,6 +36,7 @@
     padding: $spacing-24;
 
     border: 1px solid $border-default;
+    border-radius: $radius-20;
 
     .card_title, .card_date {
         color: $text-default;
