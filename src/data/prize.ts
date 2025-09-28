@@ -1,4 +1,24 @@
-export const Prize = {
+export interface PrizeInfo {
+  medal: boolean;
+  prize: number;
+}
+
+export interface PrizeCategory {
+  first: PrizeInfo;
+  second: PrizeInfo;
+  third: PrizeInfo;
+}
+
+export interface PrizeData {
+  total: number;
+  middle: PrizeCategory;
+  general: PrizeCategory;
+  specialPrize: {
+    count: number;
+  };
+}
+
+export const Prize: PrizeData = {
   total: 3000000,
   middle: {
     first: {
@@ -28,4 +48,37 @@ export const Prize = {
       prize: 200000,
     },
   },
+  specialPrize: {
+    count: 1,
+  },
 };
+
+// 유틸리티 함수들
+export const formatCurrency = (amount: number): string => {
+  return amount.toLocaleString("ko-KR");
+};
+
+export const formatPrizeDisplay = (prizeInfo: PrizeInfo): string => {
+  if (prizeInfo.medal) {
+    return `메달 및 상금\n(${formatCurrency(prizeInfo.prize)}원)`;
+  }
+  return `${formatCurrency(prizeInfo.prize)}원`;
+};
+
+export const getPrizeTableData = (category: PrizeCategory) => [
+  {
+    rank: "1등",
+    certificate: "선린인터넷고등학교장",
+    prize: formatPrizeDisplay(category.first),
+  },
+  {
+    rank: "2등",
+    certificate: "선린인터넷고등학교장",
+    prize: formatPrizeDisplay(category.second),
+  },
+  {
+    rank: "3등",
+    certificate: "선린인터넷고등학교장",
+    prize: formatPrizeDisplay(category.third),
+  },
+];

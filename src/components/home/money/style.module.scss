@@ -31,6 +31,8 @@
 
     th, td {
         width: 230px;
+
+        font-size: 18px;
     }
 
     th:nth-child(2), td:nth-child(2) {
@@ -46,7 +48,7 @@
     }
 
     tbody > tr {
-        height: 75px;
+        height: 80px;
     }
 
     tbody > tr:nth-child(even) {

@@ -1,24 +1,27 @@
 import { Section, Typo } from "@/components/ui";
 import { FlexAlign, FlexJustify, HStack, VStack } from "@/components/ui/stack";
+import { formatCurrency, getPrizeTableData, Prize } from "@/data/prize";
 
 import s from "./style.module.scss";
 
 export default function Money() {
   const goods = [
     { id: 1, src: "/images/goods/airpods.png", alt: "상품 [AirPods]" },
-    { id: 2, src: "/images/goods/iphone.webp", alt: "상품 [AirPods]" },
-    { id: 3, src: "/images/goods/dreamhack.webp", alt: "상품 [AirPods]" },
+    { id: 2, src: "/images/goods/iphone.webp", alt: "상품 [iPhone]" },
+    { id: 3, src: "/images/goods/dreamhack.webp", alt: "상품 [DreamHack]" },
   ];
 
-  // 무한 루프를 위해 상품 배열을 2번 복사
   const duplicatedGoods = [...goods, ...goods];
+
+  const middleSchoolData = getPrizeTableData(Prize.middle);
+  const generalData = getPrizeTableData(Prize.general);
 
   return (
     <Section gap={100}>
       <VStack align={FlexAlign.Center} gap={24} className={s.money_container}>
         <VStack align={FlexAlign.Center}>
           <Typo.BodyLarge>대회 상금</Typo.BodyLarge>
-          <Typo.Headline>3,000,000원</Typo.Headline>
+          <Typo.Headline>{formatCurrency(Prize.total)}원</Typo.Headline>
         </VStack>
 
         <VStack gap={48}>
@@ -40,33 +43,22 @@ export default function Money() {
             </table>
             <table className={s.table}>
               <tbody>
-                <tr>
-                  <td>1등</td>
-                  <td>선린인터넷고등학교장</td>
-                  <td>
-                    메달 및 상금
-                    <br />
-                    (25만원)
-                  </td>
-                </tr>
-                <tr>
-                  <td>2등</td>
-                  <td>선린인터넷고등학교장</td>
-                  <td>
-                    메달 및 상금
-                    <br />
-                    (25만원)
-                  </td>
-                </tr>
-                <tr>
-                  <td>3등</td>
-                  <td>선린인터넷고등학교장</td>
-                  <td>
-                    메달 및 상금
-                    <br />
-                    (10만원)
-                  </td>
-                </tr>
+                {middleSchoolData.map((row, index) => (
+                  <tr key={index}>
+                    <td>{row.rank}</td>
+                    <td>{row.certificate}</td>
+                    <td>
+                      {row.prize.split("\n").map((line, lineIndex) => (
+                        <span key={lineIndex}>
+                          {line}
+                          {lineIndex === 0 && row.prize.includes("\n") && (
+                            <br />
+                          )}
+                        </span>
+                      ))}
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </VStack>
@@ -77,27 +69,21 @@ export default function Money() {
             </HStack>
             <table className={s.table}>
               <tbody>
-                <tr>
-                  <td>1등</td>
-                  <td>선린인터넷고등학교장</td>
-                  <td>500,000원</td>
-                </tr>
-                <tr>
-                  <td>2등</td>
-                  <td>선린인터넷고등학교장</td>
-                  <td>300,000원</td>
-                </tr>
-                <tr>
-                  <td>3등</td>
-                  <td>선린인터넷고등학교장</td>
-                  <td>200,000원</td>
-                </tr>
+                {generalData.map((row, index) => (
+                  <tr key={index}>
+                    <td>{row.rank}</td>
+                    <td>{row.certificate}</td>
+                    <td>{row.prize}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </VStack>
           <div className={s.special_prize}>
             <span className={s.special_prize_title}>특별상</span>
-            <span className={s.special_prize_count}>1명</span>
+            <span className={s.special_prize_count}>
+              {Prize.specialPrize.count}명
+            </span>
           </div>
         </VStack>
       </VStack>
