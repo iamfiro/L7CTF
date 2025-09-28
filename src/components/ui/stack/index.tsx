@@ -31,6 +31,7 @@ interface StackProps {
   wrap?: boolean;
   className?: string;
   style?: React.CSSProperties;
+  id?: string;
 }
 
 // HStack 컴포넌트 (가로 배치)
@@ -44,6 +45,7 @@ export const HStack: React.FC<StackProps> = ({
   wrap = false,
   className,
   style,
+  id,
   ...props
 }) => {
   const alignClass = styles[`align-${align}`];
@@ -62,6 +64,7 @@ export const HStack: React.FC<StackProps> = ({
     heightClass,
     wrapClass,
     className,
+    id,
   ]
     .filter(Boolean)
     .join(" ");
@@ -69,6 +72,7 @@ export const HStack: React.FC<StackProps> = ({
   return (
     <div
       className={combinedClassName}
+      id={id}
       style={{ ...style, gap: gap > 0 ? `${gap}px` : undefined }}
       {...props}
     >
@@ -88,6 +92,7 @@ export const VStack: React.FC<StackProps> = ({
   wrap = false,
   className,
   style,
+  id,
   ...props
 }) => {
   const alignClass = styles[`align-${align}`];
@@ -106,6 +111,7 @@ export const VStack: React.FC<StackProps> = ({
     heightClass,
     wrapClass,
     className,
+    id,
   ]
     .filter(Boolean)
     .join(" ");
@@ -113,6 +119,7 @@ export const VStack: React.FC<StackProps> = ({
   return (
     <div
       className={combinedClassName}
+      id={id}
       style={{ ...style, gap: gap > 0 ? `${gap}px` : undefined }}
       {...props}
     >

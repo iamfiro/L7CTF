@@ -30,7 +30,7 @@ export default function Contact() {
   return (
     <Section>
       <HStack className={s.content}>
-        <VStack className={s.notice_wrap}>
+        <VStack className={s.notice_wrap} id="notice">
           <div className={s.notice_title}>
             <Typo.Body>공지사항</Typo.Body>
           </div>
