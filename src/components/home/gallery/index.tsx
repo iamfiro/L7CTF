@@ -1,26 +1,49 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 import { Section, Typo } from "@/components/ui";
 import { FlexAlign, FlexJustify, HStack, VStack } from "@/components/ui/stack";
-import { galleryImages } from "@/data/gallery";
 
 import s from "./style.module.scss";
+
+// 갤러리 이미지들을 동적으로 가져오기
+const galleryModules = import.meta.glob(
+  "/public/images/gallery/*.{png,jpg,jpeg,webp}",
+  {
+    eager: true,
+    as: "url",
+  },
+);
 
 export default function Gallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // 갤러리 이미지 배열 생성
+  const galleryImages = useMemo(() => {
+    return Object.entries(galleryModules).map(([path, url], index) => {
+      const fileName = path.split("/").pop()?.split(".")[0] || "";
+      return {
+        id: `gallery-${index + 1}`,
+        src: url as string,
+        alt: `갤러리 이미지 ${index + 1}`,
+        title: fileName
+          .replace(/[-_]/g, " ")
+          .replace(/\b\w/g, (l) => l.toUpperCase()),
+      };
+    });
+  }, []);
+
   // 다음 이미지로 이동
   const goToNext = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
-  }, []);
+  }, [galleryImages.length]);
 
   // 이전 이미지로 이동
   const goToPrevious = useCallback(() => {
     setCurrentIndex(
       (prev) => (prev - 1 + galleryImages.length) % galleryImages.length,
     );
-  }, []);
+  }, [galleryImages.length]);
 
   // 특정 인덱스로 이동
   const goToSlide = useCallback((index: number) => {
@@ -31,7 +54,7 @@ export default function Gallery() {
     <Section>
       <div className={s.gallery_container}>
         <Typo.Headline>갤러리</Typo.Headline>
-        <VStack gap={14}>
+        <VStack>
           <div className={s.image_container} tabIndex={0}>
             <img
               src={galleryImages[currentIndex].src}

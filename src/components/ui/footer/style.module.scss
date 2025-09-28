@@ -1,11 +1,16 @@
 .footer {
     width: min(100%, $max-width);
 
-    padding: $spacing-100 $padding;
+    padding-block: $padding;
     margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.footer_address {
+.footer_address, .footer_copyright {
     color: $text-subtle;
 }
 
@@ -17,4 +22,15 @@
         height: 24px;
         fill: $text-subtle;
     }
+}
+
+.moderator_wrap span:not(.moderator_title) {
+    color: $text-subtle;
+}
+
+.creator_link {
+    cursor: pointer;
+
+    text-decoration: none;
+    color: $text-subtle;
 }

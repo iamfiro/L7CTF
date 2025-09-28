@@ -1,5 +1,6 @@
 export { default as Calendar } from "./calendar";
 export { default as CompetitionAbout } from "./competition-about";
+export { default as Contact } from "./contact";
 export { default as FormAbout } from "./form-about";
 export { default as Gallery } from "./gallery";
 export { default as Hero } from "./hero";

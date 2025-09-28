@@ -1,6 +1,7 @@
 import {
   Calendar,
   CompetitionAbout,
+  Contact,
   FormAbout,
   Gallery,
   Hero,
@@ -23,6 +24,7 @@ export default function Home() {
       <CompetitionAbout />
       <Money />
       <Gallery />
+      <Contact />
       <Footer />
     </>
   );
