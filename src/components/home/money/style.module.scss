@@ -1,80 +1,83 @@
-.money {
-    width: min($max-width, 100%);
+.money_container {
+    width: min(700px, 100%);
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: $spacing-100;
-
-    padding-inline: $padding;
     margin: 0 auto;
 }
 
-.money_title {
-    font-size: 72px;
-    line-height: 94px;
+.money_age {
+    color: $text-subtle;
 }
 
 .table {
     width: 100%;
-    max-width: 800px;
-    margin-top: $spacing-48;
     border-collapse: separate;
     border-spacing: 0;
-    border-radius: 32px;
+    border-radius: $radius-20;
     border: 1px solid $border-default;
     overflow: hidden;
-    background: $surface-default;
-
-    thead {
-        background: $surface-subtlest;
-    }
 
     th, td {
         padding: 6px 0;
         text-align: center;
-        font-family: $font-primary;
-        font-size: 24px;
         line-height: 1.33;
-        color: $text-default;
-        height: 67px;
         vertical-align: middle;
+        
+        color: $text-default;
     }
 
-    th {
-        width: 200px;
-        font-weight: 600;
+    thead {
+        height: 60px;
     }
 
-    th:nth-child(2) {
-        width: 280px;
+    th, td {
+        width: 230px;
     }
 
-    th:nth-child(3) {
-        width: 320px;
+    th:nth-child(2), td:nth-child(2) {
+        width: 240px;
     }
 
     td {
         border-top: 1px solid $border-default;
-        font-weight: 400;
     }
 
     tbody tr {
         border-bottom: 1px solid $border-default;
     }
 
-    tbody tr:last-child {
-        border-bottom: none;
+    tbody > tr {
+        height: 75px;
     }
 
-    tbody tr:first-child td {
-        border-top: none;
-        height: 110px;
+    tbody > tr:nth-child(even) {
+        background-color: #1b1b1b;
+    }
+}
+
+.special_prize {
+    width: 100%;
+
+    background-color: $surface-subtlest;
+
+    border-radius: $radius-20;
+
+    height: 64px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+        display: block;
+        text-align: center;
     }
 
-    tbody tr:not(:first-child) td {
-        height: 80px;
+    span:first-child {
+        width: 450px;
+    }
+
+    span:last-child {
+        width: 250px;
     }
 }
 

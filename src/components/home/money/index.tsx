@@ -1,5 +1,5 @@
-import { Typo } from "@/components/ui";
-import { FlexAlign, VStack } from "@/components/ui/stack";
+import { Section, Typo } from "@/components/ui";
+import { FlexAlign, FlexJustify, HStack, VStack } from "@/components/ui/stack";
 
 import s from "./style.module.scss";
 
@@ -14,37 +14,92 @@ export default function Money() {
   const duplicatedGoods = [...goods, ...goods];
 
   return (
-    <section className={s.money}>
-      <VStack align={FlexAlign.Center}>
-        <Typo.Headline>대회 상금</Typo.Headline>
-        <Typo.Headline className={s.money_title}>3,000,000원</Typo.Headline>
+    <Section gap={100}>
+      <VStack align={FlexAlign.Center} gap={24} className={s.money_container}>
+        <VStack align={FlexAlign.Center}>
+          <Typo.BodyLarge>대회 상금</Typo.BodyLarge>
+          <Typo.Headline>3,000,000원</Typo.Headline>
+        </VStack>
 
-        <table className={s.table}>
-          <thead>
-            <tr>
-              <th>구분</th>
-              <th>주관</th>
-              <th>인원</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>본상</td>
-              <td>선린인터넷고등학교장</td>
-              <td>중고등부/고등부 상위 3명씩</td>
-            </tr>
-            <tr>
-              <td>티오리 대표상</td>
-              <td>Theori</td>
-              <td>1명</td>
-            </tr>
-            <tr>
-              <td>Hspace 대표상</td>
-              <td>Hspace</td>
-              <td>1명</td>
-            </tr>
-          </tbody>
-        </table>
+        <VStack gap={48}>
+          <VStack gap={24} fullWidth>
+            <HStack fullWidth justify={FlexJustify.Between}>
+              <Typo.Display>중등부/고등부</Typo.Display>
+              <Typo.BodyLarge className={s.money_age}>
+                14세 ~ 19세
+              </Typo.BodyLarge>
+            </HStack>
+            <table className={s.table}>
+              <thead>
+                <tr>
+                  <Typo.Body as="th">구분</Typo.Body>
+                  <Typo.Body as="th">상장</Typo.Body>
+                  <Typo.Body as="th">부상</Typo.Body>
+                </tr>
+              </thead>
+            </table>
+            <table className={s.table}>
+              <tbody>
+                <tr>
+                  <td>1등</td>
+                  <td>선린인터넷고등학교장</td>
+                  <td>
+                    메달 및 상금
+                    <br />
+                    (25만원)
+                  </td>
+                </tr>
+                <tr>
+                  <td>2등</td>
+                  <td>선린인터넷고등학교장</td>
+                  <td>
+                    메달 및 상금
+                    <br />
+                    (25만원)
+                  </td>
+                </tr>
+                <tr>
+                  <td>3등</td>
+                  <td>선린인터넷고등학교장</td>
+                  <td>
+                    메달 및 상금
+                    <br />
+                    (10만원)
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </VStack>
+          <VStack gap={24} fullWidth>
+            <HStack fullWidth justify={FlexJustify.Between}>
+              <Typo.Display>일반부</Typo.Display>
+              <Typo.BodyLarge className={s.money_age}>20세 이상</Typo.BodyLarge>
+            </HStack>
+            <table className={s.table}>
+              <tbody>
+                <tr>
+                  <td>1등</td>
+                  <td>선린인터넷고등학교장</td>
+                  <td>500,000원</td>
+                </tr>
+                <tr>
+                  <td>2등</td>
+                  <td>선린인터넷고등학교장</td>
+                  <td>300,000원</td>
+                </tr>
+                <tr>
+                  <td>3등</td>
+                  <td>선린인터넷고등학교장</td>
+                  <td>200,000원</td>
+                </tr>
+              </tbody>
+            </table>
+          </VStack>
+          <div className={s.special_prize}>
+            <span className={s.special_prize_title}>특별상</span>
+            <span className={s.special_prize_count}>1명</span>
+          </div>
+        </VStack>
       </VStack>
       <VStack align={FlexAlign.Center} gap={48}>
         <Typo.BodyLarge>이 외의 다양한 상품이 준비되어 있어요</Typo.BodyLarge>
@@ -60,6 +115,6 @@ export default function Money() {
           </div>
         </div>
       </VStack>
-    </section>
+    </Section>
   );
 }
