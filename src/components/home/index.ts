@@ -1,3 +1,4 @@
+export { default as About } from "./about";
 export { default as Calendar } from "./calendar";
 export { default as CompetitionAbout } from "./competition-about";
 export { default as Contact } from "./contact";

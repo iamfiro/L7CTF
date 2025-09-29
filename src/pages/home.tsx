@@ -1,10 +1,12 @@
 import {
+  About,
   Calendar,
   CompetitionAbout,
   Contact,
   FormAbout,
   Gallery,
   Hero,
+  Merit,
   Money,
   Sponsor,
 } from "@/components/home";
@@ -19,6 +21,8 @@ export default function Home() {
       <Header />
       <Hero />
       <Sponsor />
+      <About />
+      <Merit />
       <Calendar />
       <FormAbout />
       <CompetitionAbout />
