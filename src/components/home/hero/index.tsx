@@ -7,9 +7,6 @@ import s from "./style.module.scss";
 export default function Hero() {
   return (
     <section className={s.hero}>
-      <div className={s.light} />
-      <div className={s.light_center} />
-      <div className={s.light_right} />
       <div className={s.hero_text}>
         <VStack gap={12} align={FlexAlign.Center}>
           <h2 className={s.hero_subtitle}>We hack the</h2>

@@ -6,6 +6,7 @@ import {
   FormAbout,
   Gallery,
   Hero,
+  Light,
   Merit,
   Money,
   Sponsor,
@@ -18,6 +19,7 @@ export default function Home() {
   return (
     <>
       <Spacing size={64} />
+      <Light />
       <Header />
       <Hero />
       <Sponsor />

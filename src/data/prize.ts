@@ -13,9 +13,6 @@ export interface PrizeData {
   total: number;
   middle: PrizeCategory;
   general: PrizeCategory;
-  specialPrize: {
-    count: number;
-  };
 }
 
 export const Prize: PrizeData = {
@@ -48,9 +45,6 @@ export const Prize: PrizeData = {
       prize: 200000,
     },
   },
-  specialPrize: {
-    count: 1,
-  },
 };
 
 // 유틸리티 함수들
@@ -60,7 +54,7 @@ export const formatCurrency = (amount: number): string => {
 
 export const formatPrizeDisplay = (prizeInfo: PrizeInfo): string => {
   if (prizeInfo.medal) {
-    return `메달 및 상금\n(${formatCurrency(prizeInfo.prize)}원)`;
+    return `키링 및 상금\n(${formatCurrency(prizeInfo.prize)}원)`;
   }
   return `${formatCurrency(prizeInfo.prize)}원`;
 };

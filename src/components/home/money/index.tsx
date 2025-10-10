@@ -48,12 +48,10 @@ export default function Money() {
                     <td>{row.rank}</td>
                     <td>{row.certificate}</td>
                     <td>
-                      {row.prize.split("\n").map((line, lineIndex) => (
-                        <span key={lineIndex}>
+                      {row.prize.split("\n").map((line, i) => (
+                        <span key={i}>
                           {line}
-                          {lineIndex === 0 && row.prize.includes("\n") && (
-                            <br />
-                          )}
+                          {i < row.prize.split("\n").length - 1 && <br />}
                         </span>
                       ))}
                     </td>
@@ -80,10 +78,10 @@ export default function Money() {
             </table>
           </VStack>
           <div className={s.special_prize}>
-            <span className={s.special_prize_title}>특별상</span>
-            <span className={s.special_prize_count}>
-              {Prize.specialPrize.count}명
-            </span>
+            <Typo.Body>
+              수상자 전원에게 대회 굿즈와 후원사 굿즈가 담긴 패키지 박스를
+              드립니다.
+            </Typo.Body>
           </div>
         </VStack>
       </VStack>
