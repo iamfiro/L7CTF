@@ -20,7 +20,7 @@ export default function Header() {
             <a href="#" data-active={pathname === "/layer7"}>
               <Typo.Body>Layer7</Typo.Body>
             </a>
-            <a href="#" data-active={pathname === "/winners"}>
+            <a href="winners" data-active={pathname === "/winners"}>
               <Typo.Body>Winners</Typo.Body>
             </a>
             <a href="#">

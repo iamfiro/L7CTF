@@ -1,0 +1,69 @@
+.arcodian {
+  width: 100%;
+
+  padding-block: $spacing-32;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-32;
+  
+  border-bottom: 1px solid $border-default;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 32px;
+}
+
+.icon_button {
+  width: 55px;
+  height: 55px;
+
+  background-color: $surface-subtlest;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: $radius-full;
+  border: 0;
+
+  svg {
+    color: $text-default;
+
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.divisions {
+  display: flex;
+  gap: $spacing-32;
+}
+
+.division {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-16;
+}
+
+.winners {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-24;
+}
+
+.winner {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+}
+
+.division_title {
+    color: $text-subtle;
+}
