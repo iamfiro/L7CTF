@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import { Home, Winner } from "@/pages";
+import { Home, Maker, Winner } from "@/pages";
 
 const router = createBrowserRouter([
   {
@@ -10,6 +10,10 @@ const router = createBrowserRouter([
   {
     path: "/winners",
     element: <Winner />,
+  },
+  {
+    path: "/makers",
+    element: <Maker />,
   },
 ]);
 
