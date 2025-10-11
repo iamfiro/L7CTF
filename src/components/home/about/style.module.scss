@@ -13,6 +13,11 @@
     color: $text-subtle;
 
     text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .history_wrap {

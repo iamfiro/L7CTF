@@ -28,12 +28,16 @@
 
     text-decoration: none;
     
-    padding: $spacing-20 $spacing-12;
+    padding: $spacing-16 $spacing-20;
 
     border-top: 1px solid $border-default;
 
     &:last-child {
         border-bottom: 1px solid $border-default;
+    }
+
+    &:hover {
+        background-color: $surface-subtlest;
     }
 
     display: flex;
@@ -43,6 +47,7 @@
 
     .notice_date {
         color: $text-subtle;
+        font-size: 14px;
     }
 }
 
