@@ -41,7 +41,7 @@ export default function Footer() {
               <Typo.Body>조성주</Typo.Body>
             </VStack>
           </HStack>
-          <a href="/creator" className={s.creator_link}>
+          <a href="/makers" className={s.creator_link}>
             <HStack gap={4}>
               <Typo.Body>출제자 바로가기</Typo.Body>
               <ArrowUpRight size={20} />

@@ -62,3 +62,30 @@ export function generateSlug(filename: string): string {
 export function formatDate(date: Date): string {
   return date.toISOString().split('T')[0];
 }
+
+/**
+ * 마크다운을 HTML로 변환합니다.
+ * marked 라이브러리가 필요합니다.
+ */
+export function markdownToHtml(markdown: string): string {
+  // marked 라이브러리를 사용하여 마크다운을 HTML로 변환
+  // 실제 구현에서는 import { marked } from 'marked'; 를 사용해야 합니다.
+  
+  // 임시로 간단한 변환 로직을 구현
+  let html = markdown
+    // 헤더 변환
+    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+    .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+    // 볼드 텍스트
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    // 이탤릭 텍스트
+    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+    // 리스트
+    .replace(/^- (.*$)/gim, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
+    // 줄바꿈
+    .replace(/\n/g, '<br>');
+  
+  return html;
+}

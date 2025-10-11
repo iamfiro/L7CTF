@@ -47,7 +47,7 @@ export default function Contact() {
               posts.map((post) => (
                 <a
                   key={post.slug}
-                  href={`/posts/${post.slug}`}
+                  href={`/article/${post.slug}`}
                   className={s.notice_item}
                 >
                   <Typo.Body>{post.metadata.title}</Typo.Body>
