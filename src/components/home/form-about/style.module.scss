@@ -7,6 +7,15 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: $spacing-48;
+}
+
+.left {
+    flex: 1;
+}
+
+.right {
+    flex: 1;
 }
 
 .description {
@@ -15,4 +24,21 @@
 
 .eligibility_name {
     color: $text-subtle;
+}
+
+@media (max-width: 768px) {
+    .form_about {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $spacing-32;
+        padding-inline: 16px;
+    }
+    
+    .left {
+        width: 100%;
+    }
+    
+    .right {
+        width: 100%;
+    }
 }
