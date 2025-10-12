@@ -83,3 +83,14 @@
         width: 100%;
     }
 }
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        gap: $spacing-64;
+    }
+    
+    .notice_wrap, .form_wrap {
+        width: 100%;
+    }
+}

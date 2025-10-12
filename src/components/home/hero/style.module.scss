@@ -87,7 +87,7 @@
 
 @media (max-width: 768px) {
     .hero {
-        padding: $spacing-32 16px;
+        padding: $spacing-32 $padding;
     }
     
     .hero_text {

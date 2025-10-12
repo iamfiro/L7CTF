@@ -52,7 +52,7 @@ export default function Money() {
             animate={titleAnimation.isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Typo.Headline>{formatCurrency(Prize.total)}원</Typo.Headline>
+            <Typo.Headline className={s.money_title}>{formatCurrency(Prize.total)}원</Typo.Headline>
           </motion.div>
         </VStack>
 
@@ -62,7 +62,7 @@ export default function Money() {
           initial="hidden"
           animate={tableAnimation.isInView ? "visible" : "hidden"}
         >
-          <VStack gap={48}>
+          <VStack gap={48} className={s.money_table}>
             <motion.div
               variants={tableAnimation.itemVariants}
             >

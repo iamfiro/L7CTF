@@ -144,6 +144,64 @@
 
 // 반응형 디자인
 @media (max-width: 768px) {
+    .money_container {
+        width: 100%;
+        padding-inline: 24px;
+        gap: $spacing-32;
+    }
+
+    .money_table {
+        margin-top: $spacing-32;
+    }
+    
+    .table {
+        width: 100%;
+        font-size: 16px;
+        
+        th, td {
+            width: auto;
+            font-size: 16px;
+            padding: 16px 12px;
+            word-break: keep-all;
+        }
+        
+        th:nth-child(2), td:nth-child(2) {
+            width: auto;
+        }
+        
+        thead {
+            height: 70px;
+        }
+        
+        tbody > tr {
+            height: 80px;
+        }
+        
+        th:first-child, td:first-child {
+            width: 80px;
+        }
+        
+        th:nth-child(2), td:nth-child(2) {
+            width: 120px;
+        }
+        
+        th:last-child, td:last-child {
+            width: auto;
+            min-width: 150px;
+        }
+    }
+    
+    .special_prize {
+        height: 70px;
+        padding-inline: 24px;
+        margin-top: $spacing-24;
+        
+        span {
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+    
     .carousel_container {
         max-width: 100%;
         padding: 0 $spacing-16;

@@ -54,3 +54,18 @@
 .active {
     background-color: $surface-white;
 }
+
+@media (max-width: 768px) {
+    .gallery_container {
+        gap: $spacing-32;
+    }
+    
+    .arrow {
+        width: 48px;
+        
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
