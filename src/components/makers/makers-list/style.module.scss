@@ -37,3 +37,21 @@
         gap: $spacing-12;
     }
 }
+
+@media (max-width: 768px) {
+    .container {
+        gap: $spacing-32;
+    }
+    
+    .makers_list {
+        gap: $spacing-32;
+    }
+    
+    .year_section {
+        gap: $spacing-16;
+    }
+    
+    .year_title {
+        font-size: 24px;
+    }
+}

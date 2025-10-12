@@ -8,7 +8,9 @@ export default function Maker() {
       <Spacing size={64} />
       <Light />
       <Header />
-      <MakersList />
+      <div className="maker-page">
+        <MakersList />
+      </div>
       <Footer />
     </>
   );

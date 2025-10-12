@@ -9,11 +9,18 @@
   
   width: fit-content;
   justify-content: center;
-
-
   min-width: 180px;
 }
 
 .role {
   color: $text-subtle;
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: $spacing-16;
+        width: 100%;
+        min-width: unset;
+        gap: $spacing-8;
+    }
 }

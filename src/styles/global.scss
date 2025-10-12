@@ -43,3 +43,10 @@ h1, h2, h3, h4, h5, h6, p, span {
         padding-inline: 16px;
     }
 }
+
+// Maker 페이지 반응형 스타일
+.maker-page {
+    @media (max-width: 768px) {
+        padding-inline: 16px;
+    }
+}
