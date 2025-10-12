@@ -39,3 +39,34 @@
 .gold {
     background: #E3D057;
 }
+
+.hosting {
+    display: flex;
+    gap: $spacing-48;
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: $spacing-24;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .sponsor_wrap {
+        gap: $spacing-24;
+    }
+    
+    .sponsor_text {
+        text-align: center;
+        font-size: 14px;
+    }
+    
+    .layer7, .sunrin {
+        width: 24px;
+    }
+    
+    .sponsor_title {
+        padding: $spacing-6 $spacing-10;
+        font-size: 14px;
+    }
+}

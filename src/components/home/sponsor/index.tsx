@@ -99,7 +99,7 @@ export default function Sponsor() {
 
 function Hosting() {
   return (
-    <HStack gap={48}>
+    <div className={s.hosting}>
       <HStack gap={20} align={FlexAlign.Center}>
         <Typo.Body className={s.sponsor_text}>주최</Typo.Body>
         <HStack gap={12}>
@@ -126,6 +126,6 @@ function Hosting() {
           <Typo.BodyLarge>Layer7</Typo.BodyLarge>
         </HStack>
       </HStack>
-    </HStack>
+    </div>
   );
 }
