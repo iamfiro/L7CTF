@@ -23,10 +23,10 @@ export default function Header() {
         <div className={s.header_wrap}>
           <ul className={s.header_menu}>
             <li>
-              <a href="#" data-active={pathname === "/"}>
+              <a href="/" data-active={pathname === "/"}>
                 <Typo.Body>CTF</Typo.Body>
               </a>
-              <a href="#" data-active={pathname === "/layer7"}>
+              <a href="https://layer7.kr/" target="_blank" data-active={pathname === "/layer7"}>
                 <Typo.Body>Layer7</Typo.Body>
               </a>
               <a href="winners" data-active={pathname === "/winners"}>
@@ -66,10 +66,10 @@ export default function Header() {
           </button>
           
           <nav className={s.mobile_nav_menu}>
-            <a href="#" className={pathname === "/" ? s.active : ""}>
+            <a href="/" className={pathname === "/" ? s.active : ""}>
               <Typo.Headline>CTF</Typo.Headline>
             </a>
-            <a href="#" className={pathname === "/layer7" ? s.active : ""}>
+            <a href="https://layer7.kr/" target="_blank" className={pathname === "/layer7" ? s.active : ""}>
               <Typo.Headline>Layer7</Typo.Headline>
             </a>
             <a href="winners" className={pathname === "/winners" ? s.active : ""}>
