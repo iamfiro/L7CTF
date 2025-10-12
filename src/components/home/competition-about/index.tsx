@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Download } from "lucide-react";
 
 import { Button, Section, Typo } from "@/components/ui";
-import { FlexAlign, FlexJustify, HStack, VStack } from "@/components/ui/stack";
+import { FlexAlign, HStack, VStack } from "@/components/ui/stack";
 import { Competition } from "@/data/competition";
 import { getKoreanDate } from "@/utils/date";
 import { useScrollAnimation, useStaggerAnimation, useParallaxAnimation } from "@/hooks";

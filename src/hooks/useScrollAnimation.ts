@@ -87,7 +87,7 @@ export function useStaggerAnimation(
   };
 }
 
-export function useParallaxAnimation(options: ScrollAnimationOptions = {}) {
+export function useParallaxAnimation() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { 
     amount: 0.1,
