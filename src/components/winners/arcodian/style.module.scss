@@ -67,3 +67,33 @@
 .division_title {
     color: $text-subtle;
 }
+
+@media (max-width: 768px) {
+    .arcodian {
+        padding-block: $spacing-24;
+        gap: $spacing-24;
+    }
+    
+    .title {
+        font-size: 24px;
+    }
+    
+    .icon_button {
+        width: 45px;
+        height: 45px;
+        
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+    
+    .divisions {
+        flex-direction: column;
+        gap: $spacing-24;
+    }
+    
+    .winners {
+        gap: $spacing-16;
+    }
+}

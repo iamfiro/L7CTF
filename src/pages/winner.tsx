@@ -8,7 +8,9 @@ export default function Winner() {
       <Spacing size={64} />
       <Light />
       <Header />
-      <WinnersList />
+      <div className="winner-page">
+        <WinnersList />
+      </div>
       <Footer />
     </>
   );
