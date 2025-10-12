@@ -73,23 +73,14 @@ export default function Hero() {
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={buttonAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={textAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.9 }}
         >
           <div className={s.buttons}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={buttonAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              <Button size="lg" variant="secondary">
-                문의하기
-              </Button>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={buttonAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: 1.0 }}
+              animate={textAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 1.1 }}
             >
               <Button size="lg">Layer7 CTF 참가 신청하기</Button>
             </motion.div>
