@@ -1,40 +1,87 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
 
 import Button from "../button";
 import { HStack } from "../stack";
 import Typo from "../typo";
 
 import s from "./style.module.scss";
+import { Light } from "@/components/home";
 
 export default function Header() {
   const pathname = useLocation().pathname;
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
-    <header className={s.header}>
-      <div className={s.header_wrap}>
-        <ul className={s.header_menu}>
-          <li>
-            <a href="#" data-active={pathname === "/"}>
-              <Typo.Body>CTF</Typo.Body>
+    <>
+      <header className={s.header}>
+        <div className={s.header_wrap}>
+          <ul className={s.header_menu}>
+            <li>
+              <a href="#" data-active={pathname === "/"}>
+                <Typo.Body>CTF</Typo.Body>
+              </a>
+              <a href="#" data-active={pathname === "/layer7"}>
+                <Typo.Body>Layer7</Typo.Body>
+              </a>
+              <a href="winners" data-active={pathname === "/winners"}>
+                <Typo.Body>Winners</Typo.Body>
+              </a>
+              <a href="#">
+                <Typo.Body>Discord</Typo.Body>
+                <ArrowUpRight />
+              </a>
+            </li>
+          </ul>
+          
+          <a href="/" className={s.logo_link}>
+            <img src="/layer7.svg" alt="Layer7 logo" className={s.header_logo} />
+          </a>
+          
+          <HStack gap={10} className={s.header_buttons}>
+            <Button variant="secondary" className={s.inquiry_button}>문의하기</Button>
+            <Button className={s.ctf_button}>Layer7 CTF 참가 신청하기</Button>
+          </HStack>
+          
+          <div className={s.mobile_right}>
+            <Button className={s.mobile_ctf_button}>Layer7 CTF 참가 신청하기</Button>
+            <button className={s.hamburger_menu} onClick={toggleMobileMenu}>
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* 모바일 네비게이션 메뉴 */}
+      <div className={`${s.mobile_nav} ${isMobileMenuOpen ? s.mobile_nav_open : ''}`}>
+        <Light />
+        <div className={s.mobile_nav_content}>
+          <button className={s.mobile_nav_close} onClick={toggleMobileMenu}>
+            <X size={24} />
+          </button>
+          
+          <nav className={s.mobile_nav_menu}>
+            <a href="#" className={pathname === "/" ? s.active : ""}>
+              <Typo.Headline>CTF</Typo.Headline>
             </a>
-            <a href="#" data-active={pathname === "/layer7"}>
-              <Typo.Body>Layer7</Typo.Body>
+            <a href="#" className={pathname === "/layer7" ? s.active : ""}>
+              <Typo.Headline>Layer7</Typo.Headline>
             </a>
-            <a href="winners" data-active={pathname === "/winners"}>
-              <Typo.Body>Winners</Typo.Body>
+            <a href="winners" className={pathname === "/winners" ? s.active : ""}>
+              <Typo.Headline>Winners</Typo.Headline>
             </a>
             <a href="#">
-              <Typo.Body>Discord</Typo.Body>
+              <Typo.Headline>Discord</Typo.Headline>
               <ArrowUpRight />
             </a>
-          </li>
-        </ul>
-        <img src="/layer7.svg" alt="Layer7 logo" className={s.header_logo} />
-        <HStack gap={10}>
-          <Button variant="secondary">문의하기</Button>
-          <Button>Layer7 CTF 참가 신청하기</Button>
-        </HStack>
+          </nav>
+        </div>
       </div>
-    </header>
+    </>
   );
 }

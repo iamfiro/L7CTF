@@ -16,6 +16,12 @@
   &:last-child {
     border-bottom: none;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-16;
+  }
 }
 
 .titleContainer {
@@ -46,7 +52,10 @@
 
 .date {
   color: $text-subtle;
-  font-size: 14px;
   margin: 0;
   margin-left: $spacing-16;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
 }
