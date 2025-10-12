@@ -1,8 +1,10 @@
 import { motion } from "motion/react";
+import { useState, useEffect } from "react";
 import { Button, Typo } from "@/components/ui";
 import Spacing from "@/components/ui/spacing";
 import { FlexAlign, HStack, VStack } from "@/components/ui/stack";
 import { useScrollAnimation, useParallaxAnimation } from "@/hooks";
+import { Competition } from "@/data/competition";
 
 import s from "./style.module.scss";
 
@@ -20,6 +22,56 @@ export default function Hero() {
   });
 
   const mapAnimation = useParallaxAnimation();
+
+  // 접수 기간 확인
+  const now = Date.now();
+  const registrationStart = Competition[0].startDate;
+  const registrationEnd = Competition[0].endDate;
+  
+  const getRegistrationStatus = () => {
+    if (now < registrationStart) {
+      return "coming-soon";
+    } else if (now >= registrationStart && now <= registrationEnd) {
+      return "open";
+    } else {
+      return "closed";
+    }
+  };
+
+  const registrationStatus = getRegistrationStatus();
+
+  // D-Day 카운트다운
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const difference = registrationStart - Date.now();
+      
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        
+        return { days, hours, minutes, seconds };
+      }
+      
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    };
+
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    setTimeLeft(calculateTimeLeft());
+
+    return () => clearInterval(timer);
+  }, [registrationStart]);
 
   return (
     <section className={s.hero}>
@@ -77,13 +129,39 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.9 }}
         >
           <div className={s.buttons}>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={textAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: 1.1 }}
-            >
-              <Button size="lg">Layer7 CTF 참가 신청하기</Button>
-            </motion.div>
+            {registrationStatus === "coming-soon" && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={textAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+                className={s.countdown_container}
+              >
+                <Typo.BodyLarge className={s.coming_soon}>Coming Soon</Typo.BodyLarge>
+                <div className={s.countdown}>
+                  {timeLeft.days}일 {timeLeft.hours}시간 {timeLeft.minutes}분 {timeLeft.seconds}초
+                </div>
+              </motion.div>
+            )}
+            
+            {registrationStatus === "open" && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={textAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+              >
+                <Button size="lg">Layer7 CTF 참가 신청하기</Button>
+              </motion.div>
+            )}
+            
+            {registrationStatus === "closed" && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={textAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+              >
+                <Typo.BodyLarge className={s.closed}>신청 종료됨</Typo.BodyLarge>
+              </motion.div>
+            )}
           </div>
         </motion.div>
       </motion.div>

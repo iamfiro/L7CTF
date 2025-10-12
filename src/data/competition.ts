@@ -4,8 +4,8 @@ export const Competition = [
   {
     icon: File,
     title: "대회 접수",
-    startDate: Date.now(),
-    endDate: Date.now(),
+    startDate: new Date("2023-12-01T00:00:00").getTime(),
+    endDate: new Date("2026-12-31T23:59:59").getTime(),
     description: "접수 당일 Layer7 CTF 웹사이트에서 공개",
     eligibility: [
       {
@@ -25,8 +25,8 @@ export const Competition = [
   {
     icon: Flag,
     title: "대회 본선",
-    startDate: Date.now(),
-    endDate: Date.now(),
+    startDate: new Date("2025-01-15T00:00:00").getTime(),
+    endDate: new Date("2025-01-15T23:59:59").getTime(),
     description: "대회 본선 기간입니다.",
     eligibility: [
       {
