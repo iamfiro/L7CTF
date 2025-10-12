@@ -13,7 +13,7 @@
 
 .content {
     width: 100%;
-    
+    display: flex;
     gap: $spacing-64;
 }
 
@@ -79,5 +79,50 @@
 
     svg {
         color: $text-black;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar {
+        padding: $spacing-48 16px;
+        min-height: auto;
+    }
+    
+    .content {
+        flex-direction: column;
+        gap: $spacing-32;
+    }
+    
+    .content > div {
+        width: 100% !important;
+    }
+    
+    .description {
+        font-size: 18px;
+        text-align: left;
+    }
+    
+    .card {
+        width: 100%;
+        padding: $spacing-20;
+        gap: $spacing-16;
+        
+        svg {
+            width: 32px;
+            height: 32px;
+        }
+    }
+    
+    .card_title {
+        font-size: 24px;
+    }
+    
+    .card_date {
+        font-size: 14px;
+    }
+    
+    .card_info_name,
+    .card_info_value {
+        font-size: 14px;
     }
 }

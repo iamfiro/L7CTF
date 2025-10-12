@@ -22,7 +22,7 @@ export default function Calendar() {
 
   return (
     <section className={s.calendar}>
-      <HStack className={s.content}>
+      <div className={s.content}>
         <motion.div
           style={{ width: "50%" }}
           ref={titleAnimation.ref}
@@ -150,7 +150,7 @@ export default function Calendar() {
             </motion.article>
           </VStack>
         </motion.div>
-      </HStack>
+      </div>
     </section>
   );
 }
