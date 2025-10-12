@@ -21,7 +21,7 @@ export default function Footer() {
             © 2025 Layer7, Hacking Club. All Rights Reserved.
           </Typo.Subtext>
         </VStack>
-        <VStack gap={24} align={FlexAlign.End}>
+        <VStack gap={24} align={FlexAlign.End} className={s.footer_right}>
           <HStack gap={48} className={s.moderator_wrap}>
             <VStack gap={10}>
               <Typo.Body className={s.moderator_title}>총괄</Typo.Body>
@@ -29,7 +29,7 @@ export default function Footer() {
             </VStack>
             <VStack gap={10}>
               <Typo.Body className={s.moderator_title}>운영진</Typo.Body>
-              <HStack gap={8}>
+              <HStack gap={8} className={s.moderator_list}>
                 <Typo.Body>장재영</Typo.Body>
                 <Typo.Body>유승주</Typo.Body>
                 <Typo.Body>김세중</Typo.Body>
