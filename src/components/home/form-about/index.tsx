@@ -17,7 +17,6 @@ export default function FormAbout() {
   });
 
   const rightAnimation = useStaggerAnimation(
-    Competition[0].eligibility?.length || 0,
     {
       threshold: 0.2,
       delay: 0.4,
@@ -64,7 +63,7 @@ export default function FormAbout() {
           animate={rightAnimation.isInView ? "visible" : "hidden"}
         >
           <VStack gap={20}>
-            {Competition[0].eligibility?.map((eligibility, index) => (
+            {Competition[0].eligibility?.map((eligibility) => (
               <motion.div
                 key={eligibility.name}
                 variants={rightAnimation.itemVariants}

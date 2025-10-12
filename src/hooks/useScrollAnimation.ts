@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { motion, useInView, useScroll, useTransform, Variants } from 'motion/react';
+import { useRef } from 'react';
+import { useInView, useScroll, useTransform, Variants } from 'motion/react';
 
 export interface ScrollAnimationOptions {
   threshold?: number;
@@ -20,7 +20,7 @@ export function useScrollAnimation(options: ScrollAnimationOptions = {}) {
 
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { 
-    threshold, 
+    amount: threshold, 
     once: triggerOnce 
   });
 
@@ -40,7 +40,6 @@ export function useScrollAnimation(options: ScrollAnimationOptions = {}) {
 }
 
 export function useStaggerAnimation(
-  itemCount: number,
   options: ScrollAnimationOptions = {}
 ) {
   const {
@@ -53,7 +52,7 @@ export function useStaggerAnimation(
 
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { 
-    threshold, 
+    amount: threshold, 
     once: triggerOnce 
   });
 
@@ -91,7 +90,7 @@ export function useStaggerAnimation(
 export function useParallaxAnimation(options: ScrollAnimationOptions = {}) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { 
-    threshold: 0.1,
+    amount: 0.1,
     once: false 
   });
 

@@ -12,7 +12,7 @@ export default function About() {
     duration: 0.8
   });
 
-  const historyAnimation = useStaggerAnimation(3, {
+  const historyAnimation = useStaggerAnimation({
     threshold: 0.2,
     delay: 0.4,
     duration: 0.6

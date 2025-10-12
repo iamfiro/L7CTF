@@ -26,13 +26,13 @@ export default function Contact() {
     duration: 0.8
   });
 
-  const formAnimation = useStaggerAnimation(4, {
+  const formAnimation = useStaggerAnimation({
     threshold: 0.2,
     delay: 0.6,
     duration: 0.6
   });
 
-  const noticeAnimation = useStaggerAnimation(5, {
+  const noticeAnimation = useStaggerAnimation({
     threshold: 0.2,
     delay: 0.4,
     duration: 0.6

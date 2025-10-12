@@ -24,7 +24,7 @@ export default function Money() {
     duration: 0.8
   });
 
-  const tableAnimation = useStaggerAnimation(2, {
+  const tableAnimation = useStaggerAnimation({
     threshold: 0.2,
     delay: 0.4,
     duration: 0.6

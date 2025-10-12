@@ -14,7 +14,7 @@ export default function Calendar() {
     duration: 0.8
   });
 
-  const cardAnimation = useStaggerAnimation(3, {
+  const cardAnimation = useStaggerAnimation({
     threshold: 0.2,
     delay: 0.4,
     duration: 0.6

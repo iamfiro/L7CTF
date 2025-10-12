@@ -27,7 +27,6 @@ export default function CompetitionAbout() {
   });
 
   const eligibilityAnimation = useStaggerAnimation(
-    Competition[1].eligibility?.length || 0,
     {
       threshold: 0.2,
       delay: 0.6,
@@ -112,8 +111,6 @@ export default function CompetitionAbout() {
           </motion.div>
           <motion.div
             className={s.right}
-            align={FlexAlign.End}
-            justify={FlexJustify.Between}
             ref={rightAnimation.ref}
             initial={{ opacity: 0, x: 100 }}
             animate={rightAnimation.isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}

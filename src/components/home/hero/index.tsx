@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 import { Button, Typo } from "@/components/ui";
 import Spacing from "@/components/ui/spacing";
-import { FlexAlign, HStack, VStack } from "@/components/ui/stack";
+import { FlexAlign, VStack } from "@/components/ui/stack";
 import { useScrollAnimation, useParallaxAnimation } from "@/hooks";
 import { Competition } from "@/data/competition";
 
@@ -15,11 +15,6 @@ export default function Hero() {
     duration: 0.8
   });
 
-  const buttonAnimation = useScrollAnimation({
-    threshold: 0.2,
-    delay: 0.6,
-    duration: 0.8
-  });
 
   const mapAnimation = useParallaxAnimation();
 

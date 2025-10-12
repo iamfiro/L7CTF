@@ -12,7 +12,7 @@ export default function Sponsor() {
     duration: 0.8
   });
 
-  const sponsorAnimation = useStaggerAnimation(2, {
+  const sponsorAnimation = useStaggerAnimation({
     threshold: 0.2,
     delay: 0.4,
     duration: 0.6

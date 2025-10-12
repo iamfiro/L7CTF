@@ -1,4 +1,4 @@
-import { Post, PostMetadata, parseFrontmatter, generateSlug, formatDate, markdownToHtml } from './markdown';
+import { Post, parseFrontmatter, generateSlug, formatDate, markdownToHtml } from './markdown';
 import { Article } from '@/types/article';
 
 /**
