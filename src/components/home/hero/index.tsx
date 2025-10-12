@@ -76,7 +76,7 @@ export default function Hero() {
           animate={buttonAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.9 }}
         >
-          <HStack gap={14} className={s.buttons}>
+          <div className={s.buttons}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={buttonAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -93,7 +93,7 @@ export default function Hero() {
             >
               <Button size="lg">Layer7 CTF 참가 신청하기</Button>
             </motion.div>
-          </HStack>
+          </div>
         </motion.div>
       </motion.div>
       <Spacing size={120} />
