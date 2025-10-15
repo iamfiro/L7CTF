@@ -1,7 +1,5 @@
 .money_container {
-    width: min(700px, 100%);
-
-    margin: 0 auto;
+    width: min(800px, 100%);
 }
 
 .money_age {
@@ -19,7 +17,7 @@
     th, td {
         padding: 6px 0;
         text-align: center;
-        line-height: 1.33;
+        line-height: 1.5;
         vertical-align: middle;
         
         color: $text-default;
@@ -30,13 +28,19 @@
     }
 
     th, td {
-        width: 230px;
+        flex: 1;
+        max-width: 230px;
 
         font-size: 18px;
     }
 
     th:nth-child(2), td:nth-child(2) {
-        width: 240px;
+        flex: 1;
+        max-width: 240px;
+    }
+    
+    td {
+        width: 280px;
     }
 
     td {
@@ -48,7 +52,7 @@
     }
 
     tbody > tr {
-        height: 80px;
+        height: 110px;
     }
 
     tbody > tr:nth-child(even) {
@@ -152,53 +156,53 @@
 
     .money_table {
         margin-top: $spacing-32;
+        // 기존 테이블 레이아웃 유지
     }
     
     .table {
         width: 100%;
         font-size: 16px;
-        
+
+        thead {
+            display: table-header-group;
+            height: 70px;
+        }
+
         th, td {
             width: auto;
             font-size: 16px;
             padding: 16px 12px;
             word-break: keep-all;
         }
-        
-        th:nth-child(2), td:nth-child(2) {
-            width: auto;
-        }
-        
-        thead {
-            height: 70px;
-        }
-        
+
         tbody > tr {
             height: 80px;
         }
-        
+
         th:first-child, td:first-child {
             width: 80px;
         }
-        
+
         th:nth-child(2), td:nth-child(2) {
             width: 120px;
         }
-        
+
         th:last-child, td:last-child {
             width: auto;
-            min-width: 150px;
+            max-width: 150px;
         }
     }
     
     .special_prize {
-        height: 70px;
-        padding-inline: 24px;
+        height: auto;
+        padding: $spacing-20;
         margin-top: $spacing-24;
+        border-radius: $radius-16;
         
         span {
             font-size: 16px;
             text-align: center;
+            line-height: 1.6;
         }
     }
     
@@ -228,6 +232,40 @@
 }
 
 @media (max-width: 480px) {
+    .money_container {
+        padding-inline: 16px;
+    }
+    
+    .money_table {
+        gap: $spacing-16;
+    }
+    
+    .table {
+        tbody > tr {
+            padding: $spacing-16;
+        }
+        
+        td {
+            font-size: 14px;
+            
+            &:first-child {
+                font-size: 16px;
+            }
+            
+            &:nth-child(2) {
+                font-size: 13px;
+            }
+        }
+    }
+    
+    .special_prize {
+        padding: $spacing-16;
+        
+        span {
+            font-size: 14px;
+        }
+    }
+    
     .carousel_track {
         &::before,
         &::after {

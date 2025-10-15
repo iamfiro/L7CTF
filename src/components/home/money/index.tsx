@@ -1,7 +1,8 @@
 import { motion } from "motion/react";
+
 import { Section, Typo } from "@/components/ui";
 import { FlexAlign, FlexJustify, HStack, VStack } from "@/components/ui/stack";
-import { formatCurrency, getPrizeTableData, Prize } from "@/data/prize";
+import { getPrizeTableData, Prize } from "@/data/prize";
 import { useScrollAnimation, useStaggerAnimation } from "@/hooks";
 
 import s from "./style.module.scss";
@@ -21,19 +22,19 @@ export default function Money() {
   const titleAnimation = useScrollAnimation({
     threshold: 0.2,
     delay: 0.2,
-    duration: 0.8
+    duration: 0.8,
   });
 
   const tableAnimation = useStaggerAnimation({
     threshold: 0.2,
     delay: 0.4,
-    duration: 0.6
+    duration: 0.6,
   });
 
   const carouselAnimation = useScrollAnimation({
     threshold: 0.2,
     delay: 0.6,
-    duration: 0.8
+    duration: 0.8,
   });
 
   return (
@@ -42,17 +43,25 @@ export default function Money() {
         className={s.money_container}
         ref={titleAnimation.ref}
         initial={{ opacity: 0, y: 50 }}
-        animate={titleAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        animate={
+          titleAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
+        }
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <VStack align={FlexAlign.Center}>
           <Typo.BodyLarge>대회 상금</Typo.BodyLarge>
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
-            animate={titleAnimation.isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
+            animate={
+              titleAnimation.isInView
+                ? { scale: 1, opacity: 1 }
+                : { scale: 0.8, opacity: 0 }
+            }
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Typo.Headline className={s.money_title}>{formatCurrency(Prize.total)}원</Typo.Headline>
+            <Typo.Headline className={s.money_title}>
+              {Prize.total.toLocaleString("ko-KR")}원
+            </Typo.Headline>
           </motion.div>
         </VStack>
 
@@ -65,6 +74,7 @@ export default function Money() {
           <VStack gap={48} className={s.money_table}>
             <motion.div
               variants={tableAnimation.itemVariants}
+              style={{ width: "100%" }}
             >
               <VStack gap={24} fullWidth>
                 <HStack fullWidth justify={FlexJustify.Between}>
@@ -85,10 +95,14 @@ export default function Money() {
                 <table className={s.table}>
                   <tbody>
                     {middleSchoolData.map((row, index) => (
-                      <motion.tr 
+                      <motion.tr
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
-                        animate={tableAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        animate={
+                          tableAnimation.isInView
+                            ? { opacity: 1, y: 0 }
+                            : { opacity: 0, y: 20 }
+                        }
                         transition={{ duration: 0.4, delay: index * 0.1 }}
                       >
                         <td>{row.rank}</td>
@@ -109,24 +123,38 @@ export default function Money() {
             </motion.div>
             <motion.div
               variants={tableAnimation.itemVariants}
+              style={{ width: "100%" }}
             >
               <VStack gap={24} fullWidth>
                 <HStack fullWidth justify={FlexJustify.Between}>
                   <Typo.Display>일반부</Typo.Display>
-                  <Typo.BodyLarge className={s.money_age}>20세 이상</Typo.BodyLarge>
+                  <Typo.BodyLarge className={s.money_age}>
+                    20세 이상
+                  </Typo.BodyLarge>
                 </HStack>
                 <table className={s.table}>
                   <tbody>
                     {generalData.map((row, index) => (
-                      <motion.tr 
+                      <motion.tr
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
-                        animate={tableAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        animate={
+                          tableAnimation.isInView
+                            ? { opacity: 1, y: 0 }
+                            : { opacity: 0, y: 20 }
+                        }
                         transition={{ duration: 0.4, delay: index * 0.1 }}
                       >
                         <td>{row.rank}</td>
                         <td>{row.certificate}</td>
-                        <td>{row.prize}</td>
+                        <td>
+                          {row.prize.split("\n").map((line, i) => (
+                            <span key={i}>
+                              {line}
+                              {i < row.prize.split("\n").length - 1 && <br />}
+                            </span>
+                          ))}
+                        </td>
                       </motion.tr>
                     ))}
                   </tbody>
@@ -136,7 +164,11 @@ export default function Money() {
             <motion.div
               className={s.special_prize}
               initial={{ opacity: 0, scale: 0.9 }}
-              animate={tableAnimation.isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+              animate={
+                tableAnimation.isInView
+                  ? { opacity: 1, scale: 1 }
+                  : { opacity: 0, scale: 0.9 }
+              }
               transition={{ duration: 0.6, delay: 0.8 }}
             >
               <Typo.Body>
@@ -147,26 +179,24 @@ export default function Money() {
           </VStack>
         </motion.div>
       </motion.div>
-      <motion.div
-        {...carouselAnimation.motionProps}
-      >
+      <motion.div {...carouselAnimation.motionProps}>
         <Typo.BodyLarge>이 외의 다양한 상품이 준비되어 있어요</Typo.BodyLarge>
         <div className={s.carousel_container}>
-          <motion.div 
+          <motion.div
             className={s.carousel_track}
             animate={{
-              x: [0, -100 * duplicatedGoods.length / 2]
+              x: [0, (-100 * duplicatedGoods.length) / 2],
             }}
             transition={{
               duration: 20,
               repeat: Infinity,
-              ease: "linear"
+              ease: "linear",
             }}
           >
             <div className={s.carousel_slides}>
               {duplicatedGoods.map((item, index) => (
-                <motion.div 
-                  key={`${item.id}-${index}`} 
+                <motion.div
+                  key={`${item.id}-${index}`}
                   className={s.carousel_slide}
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.3 }}
