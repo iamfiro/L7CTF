@@ -1,11 +1,15 @@
-import { motion } from "motion/react";
 import { Download } from "lucide-react";
+import { motion } from "motion/react";
 
 import { Button, Section, Typo } from "@/components/ui";
 import { FlexAlign, HStack, VStack } from "@/components/ui/stack";
 import { Competition } from "@/data/competition";
+import {
+  useParallaxAnimation,
+  useScrollAnimation,
+  useStaggerAnimation,
+} from "@/hooks";
 import { getKoreanDate } from "@/utils/date";
-import { useScrollAnimation, useStaggerAnimation, useParallaxAnimation } from "@/hooks";
 
 import s from "./style.module.scss";
 
@@ -13,38 +17,40 @@ export default function CompetitionAbout() {
   const IconComponent = Competition[1].icon;
 
   const imageAnimation = useParallaxAnimation();
-  
+
   const leftAnimation = useScrollAnimation({
     threshold: 0.2,
     delay: 0.2,
-    duration: 0.8
+    duration: 0.8,
   });
 
   const rightAnimation = useScrollAnimation({
     threshold: 0.2,
     delay: 0.4,
-    duration: 0.8
+    duration: 0.8,
   });
 
-  const eligibilityAnimation = useStaggerAnimation(
-    {
-      threshold: 0.2,
-      delay: 0.6,
-      duration: 0.6
-    }
-  );
+  const eligibilityAnimation = useStaggerAnimation({
+    threshold: 0.2,
+    delay: 0.6,
+    duration: 0.6,
+  });
 
   return (
     <Section>
       <div className={s.form_about}>
         <motion.div
           ref={imageAnimation.ref}
-          style={imageAnimation.isInView ? {
-            y: imageAnimation.y,
-            width: '100%'
-          } : {
-            width: '100%'
-          }}
+          style={
+            imageAnimation.isInView
+              ? {
+                  y: imageAnimation.y,
+                  width: "100%",
+                }
+              : {
+                  width: "100%",
+                }
+          }
         >
           <img
             src="/images/competition/sample.png"
@@ -56,8 +62,12 @@ export default function CompetitionAbout() {
           <motion.div
             className={s.left}
             ref={leftAnimation.ref}
-            initial={{ opacity: 0, x: -100 }}
-            animate={leftAnimation.isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+            initial={{ opacity: 0, y: 100 }}
+            animate={
+              leftAnimation.isInView
+                ? { opacity: 1, y: 0 }
+                : { opacity: 0, y: 100 }
+            }
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <VStack gap={40}>
@@ -71,10 +81,20 @@ export default function CompetitionAbout() {
                   </motion.div>
                   <Typo.Headline>{Competition[1].title}</Typo.Headline>
                 </HStack>
-                <Typo.BodyLarge>
-                  {getKoreanDate(new Date(Competition[1].startDate))} ~{" "}
-                  {getKoreanDate(new Date(Competition[1].endDate))}
-                </Typo.BodyLarge>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={
+                    leftAnimation.isInView
+                      ? { opacity: 1, y: 0 }
+                      : { opacity: 0, y: 20 }
+                  }
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                >
+                  <Typo.BodyLarge>
+                    {getKoreanDate(new Date(Competition[1].startDate))} ~{" "}
+                    {getKoreanDate(new Date(Competition[1].endDate))}
+                  </Typo.BodyLarge>
+                </motion.div>
               </VStack>
               <motion.div
                 ref={eligibilityAnimation.ref}
@@ -90,10 +110,7 @@ export default function CompetitionAbout() {
                       whileHover={{ x: 10, scale: 1.02 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <HStack
-                        gap={12}
-                        align={FlexAlign.Center}
-                      >
+                      <HStack gap={12} align={FlexAlign.Center}>
                         <Typo.Body className={s.eligibility_name}>
                           {eligibility.name}
                         </Typo.Body>
@@ -103,34 +120,73 @@ export default function CompetitionAbout() {
                   ))}
                 </VStack>
               </motion.div>
-              <Typo.Subtext className={s.eligibility_description}>
-                * 부정행위, 서류증빙 미흡 등으로 인한 부적격팀 발생 시 차상위팀
-                본선 진출
-              </Typo.Subtext>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={
+                  leftAnimation.isInView
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 20 }
+                }
+                transition={{ duration: 0.5, delay: 0.9 }}
+              >
+                <Typo.Subtext className={s.eligibility_description}>
+                  * 부정행위, 서류증빙 미흡 등으로 인한 부적격팀 발생 시
+                  차상위팀 본선 진출
+                </Typo.Subtext>
+              </motion.div>
             </VStack>
           </motion.div>
           <motion.div
             className={s.right}
             ref={rightAnimation.ref}
-            initial={{ opacity: 0, x: 100 }}
-            animate={rightAnimation.isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+            initial={{ opacity: 0, y: 100 }}
+            animate={
+              rightAnimation.isInView
+                ? { opacity: 1, y: 0 }
+                : { opacity: 0, y: 100 }
+            }
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <VStack gap={24} align={FlexAlign.End}>
-              <Typo.BodyLarge>{Competition[1].description}</Typo.BodyLarge>
-              <VStack gap={6} align={FlexAlign.End}>
-                <Typo.Body className={s.preparation_name}>준비물</Typo.Body>
-                <VStack>
-                  <Typo.Body>
-                    {Competition[1].preparation?.join(", ")}
-                  </Typo.Body>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={
+                  rightAnimation.isInView
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 20 }
+                }
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <Typo.BodyLarge>{Competition[1].description}</Typo.BodyLarge>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={
+                  rightAnimation.isInView
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 20 }
+                }
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <VStack gap={6} className={s.preparation_container}>
+                  <Typo.Body className={s.preparation_name}>준비물</Typo.Body>
+                  <VStack>
+                    <Typo.Body>
+                      {Competition[1].preparation?.join(", ")}
+                    </Typo.Body>
+                  </VStack>
                 </VStack>
-              </VStack>
+              </motion.div>
             </VStack>
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              style={{marginTop: 32}}
+              initial={{ opacity: 0, y: 15 }}
+              animate={
+                rightAnimation.isInView
+                  ? { opacity: 1, y: 0 }
+                  : { opacity: 0, y: 15 }
+              }
+              transition={{ duration: 0.8, delay: 0.6 }}
+              style={{ marginTop: 32 }}
             >
               <Button size="lg" leadingIcon={Download}>
                 대회규칙 / 운영규정 다운 받기
@@ -141,7 +197,11 @@ export default function CompetitionAbout() {
         <motion.div
           className={s.cheat_warning}
           initial={{ opacity: 0, y: 30 }}
-          animate={rightAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={
+            rightAnimation.isInView
+              ? { opacity: 1, y: 0 }
+              : { opacity: 0, y: 30 }
+          }
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <span>

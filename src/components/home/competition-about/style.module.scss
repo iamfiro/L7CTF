@@ -18,12 +18,22 @@
     gap: $spacing-48;
 }
 
+.preparation_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .left {
     flex: 1;
 }
 
 .right {
     flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .image {
@@ -105,5 +115,9 @@
             font-size: 14px;
             line-height: 1.4;
         }
+    }
+
+    .preparation_container {
+        align-items: flex-start;
     }
 }

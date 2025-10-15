@@ -1,4 +1,4 @@
-import { Light } from "@/components/home";
+import { Light } from "@/components/ui";
 import { Footer, Header, Spacing } from "@/components/ui";
 import { MakersList } from "@/components/makers";
 

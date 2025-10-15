@@ -7,7 +7,7 @@ import { HStack } from "../stack";
 import Typo from "../typo";
 
 import s from "./style.module.scss";
-import { Light } from "@/components/home";
+import { Light } from "@/components/ui";
 
 export default function Header() {
   const pathname = useLocation().pathname;

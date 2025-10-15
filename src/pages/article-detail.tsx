@@ -1,4 +1,4 @@
-import { Light } from "@/components/home";
+import { Light } from "@/components/ui";
 import { Footer, Header, Spacing } from "@/components/ui";
 import { ArticleDetail as ArticleDetailComponent } from "@/components/articles";
 

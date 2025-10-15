@@ -6,12 +6,11 @@ import {
   FormAbout,
   Gallery,
   Hero,
-  Light,
   Merit,
   Money,
   Sponsor,
 } from "@/components/home";
-import { Header } from "@/components/ui";
+import { Header, Light } from "@/components/ui";
 import Footer from "@/components/ui/footer";
 import Spacing from "@/components/ui/spacing";
 
