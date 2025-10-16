@@ -12,28 +12,33 @@
   font-size: clamp(24px, 5vw, 46px);
   line-height: clamp(32px, 6.5vw, 62px);
   font-weight: 500;
+  word-break: keep-all;
 }
 
 .bodyLarge {
   font-size: 24px;
   line-height: 36px;
   font-weight: 400;
+  word-break: keep-all;
 }
 
 .body {
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
+  word-break: keep-all;
 }
 
 .subtext {
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
+  word-break: keep-all;
 }
 
 .caption {
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
+  word-break: keep-all;
 }

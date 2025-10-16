@@ -157,6 +157,181 @@ export default function Money() {
                   </tbody>
                 </table>
               </div>
+              <div className={s.table_mobile}>
+                <div className={s.card_group}>
+                  <div className={s.group_header}>
+                    <Typo.Body>일반부</Typo.Body>
+                  </div>
+                  <div className={s.card}>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>구분</Typo.Body>
+                      <Typo.Body>1등</Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상금</Typo.Body>
+                      <Typo.Body>
+                        {extractCashAmount(Prize.general.first.prize)}
+                      </Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상품</Typo.Body>
+                      <Typo.Body>
+                        {extractGoods(Prize.general.first.prize)}
+                      </Typo.Body>
+                    </div>
+                  </div>
+                  <div className={s.card}>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>구분</Typo.Body>
+                      <Typo.Body>2등</Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상금</Typo.Body>
+                      <span>
+                        {extractCashAmount(Prize.general.second.prize)}
+                      </span>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상품</Typo.Body>
+                      <Typo.Body>
+                        {extractGoods(Prize.general.second.prize)}
+                      </Typo.Body>
+                    </div>
+                  </div>
+                  <div className={s.card}>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>구분</Typo.Body>
+                      <Typo.Body>3등</Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상금</Typo.Body>
+                      <Typo.Body>
+                        {extractCashAmount(Prize.general.third.prize)}
+                      </Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상품</Typo.Body>
+                      <Typo.Body>
+                        {extractGoods(Prize.general.third.prize)}
+                      </Typo.Body>
+                    </div>
+                  </div>
+                </div>
+                <div className={s.card_group}>
+                  <div className={s.group_header}>고등부</div>
+                  <div className={s.card}>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>구분</Typo.Body>
+                      <Typo.Body>1등</Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상금</Typo.Body>
+                      <Typo.Body>
+                        {extractCashAmount(Prize.middle.first.prize)}
+                      </Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상품</Typo.Body>
+                      <Typo.Body>
+                        {extractGoods(Prize.middle.first.prize)}
+                      </Typo.Body>
+                    </div>
+                  </div>
+                  <div className={s.card}>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>구분</Typo.Body>
+                      <Typo.Body>2등</Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상금</Typo.Body>
+                      <Typo.Body>
+                        {extractCashAmount(Prize.middle.second.prize)}
+                      </Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상품</Typo.Body>
+                      <Typo.Body>
+                        {extractGoods(Prize.middle.second.prize)}
+                      </Typo.Body>
+                    </div>
+                  </div>
+                  <div className={s.card}>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>구분</Typo.Body>
+                      <Typo.Body>3등</Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상금</Typo.Body>
+                      <Typo.Body>
+                        {extractCashAmount(Prize.middle.third.prize)}
+                      </Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상품</Typo.Body>
+                      <Typo.Body>
+                        {extractGoods(Prize.middle.third.prize)}
+                      </Typo.Body>
+                    </div>
+                  </div>
+                </div>
+                <div className={s.card_group}>
+                  <div className={s.group_header}>중등부</div>
+                  <div className={s.card}>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>구분</Typo.Body>
+                      <Typo.Body>1등</Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상금</Typo.Body>
+                      <Typo.Body>
+                        {extractCashAmount(Prize.middle.first.prize)}
+                      </Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상품</Typo.Body>
+                      <Typo.Body>
+                        {extractGoods(Prize.middle.first.prize)}
+                      </Typo.Body>
+                    </div>
+                  </div>
+                  <div className={s.card}>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>구분</Typo.Body>
+                      <Typo.Body>2등</Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상금</Typo.Body>
+                      <Typo.Body>
+                        {extractCashAmount(Prize.middle.second.prize)}
+                      </Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상품</Typo.Body>
+                      <Typo.Body>
+                        {extractGoods(Prize.middle.second.prize)}
+                      </Typo.Body>
+                    </div>
+                  </div>
+                  <div className={s.card}>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>구분</Typo.Body>
+                      <Typo.Body>3등</Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상금</Typo.Body>
+                      <Typo.Body>
+                        {extractCashAmount(Prize.middle.third.prize)}
+                      </Typo.Body>
+                    </div>
+                    <div className={s.card_row}>
+                      <Typo.Body className={s.label}>상품</Typo.Body>
+                      <Typo.Body>
+                        {extractGoods(Prize.middle.third.prize)}
+                      </Typo.Body>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <motion.div
                 className={s.special_prize}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -184,7 +359,9 @@ export default function Money() {
           ref={carouselAnimation.ref}
           {...carouselAnimation.motionProps}
         >
-          <Typo.BodyLarge style={{ marginBottom: 32 }}>상품</Typo.BodyLarge>
+          <Typo.BodyLarge style={{ marginBottom: 32 }}>
+            이 외의 다양한 특별상이 준비되어 있어요
+          </Typo.BodyLarge>
           <div className={s.carousel_container}>
             <motion.div className={s.carousel_track}>
               <div className={s.carousel_slides}>

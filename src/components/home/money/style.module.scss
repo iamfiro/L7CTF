@@ -3,6 +3,13 @@
     margin-inline: auto;
 }
 
+.money_title {
+    margin-top: $spacing-16;
+    margin-bottom: $spacing-24;
+    font-size: clamp(32px, 6vw, 56px);
+    line-height: 1.15;
+}
+
 .money_age {
     color: $text-subtle;
 }
@@ -12,6 +19,10 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
+}
+
+.table_mobile {
+    display: none;
 }
 
 .table {
@@ -49,7 +60,7 @@
     }
 
     th, td {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     th:first-child, td:first-child {
@@ -106,11 +117,17 @@
 
     border-radius: $radius-20;
 
-    height: 64px;
+    min-height: 64px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding: $spacing-16;
+
+    span {
+        text-align: center;
+    }
 }
 
 .carousel_container {
@@ -197,8 +214,8 @@
 @media (max-width: 768px) {
     .table {
         th, td {
-            font-size: 14px;
-            padding: 8px 6px;
+            font-size: 16px;
+            padding: 10px 8px;
         }
 
         th:first-child, td:first-child { min-width: 84px; }
@@ -210,6 +227,52 @@
         }
 
         tbody > tr { height: auto; }
+    }
+
+    // 모바일에서는 테이블 숨기고 카드 UI 노출
+    .table_wrapper { display: none; }
+    .table_mobile {
+        width: 100%;
+        display: grid;
+        gap: $spacing-16;
+        font-size: 16px;
+        margin-top: $spacing-32;
+    }
+
+    .card_group {
+        background: $surface-subtlest;
+        border: 1px solid $border-default;
+        border-radius: $radius-16;
+        overflow: hidden;
+    }
+
+    .group_header {
+        padding: 12px 16px;
+        background: $surface-default;
+        border-bottom: 1px solid $border-default;
+        font-weight: 700;
+        font-size: 17px;
+        color: $text-default;
+    }
+
+    .card {
+        display: grid;
+        gap: 8px;
+        padding: 12px 16px;
+        border-bottom: 1px solid $border-default;
+        &:last-child { border-bottom: 0; }
+    }
+
+    .card_row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        color: $text-default;
+    }
+
+    .label {
+        color: $text-subtle;
+        min-width: 48px;
     }
 }
 
