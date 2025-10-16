@@ -29,7 +29,7 @@ export const Prize: PrizeData = {
     },
     third: {
       medal: true,
-      prize: "7만원 상금 및\nDreamhack Starter Plan\n1년 구독권",
+      prize: "3만원 상금 및\nDreamhack Starter Plan\n1년 구독권",
     },
   },
   high: {
