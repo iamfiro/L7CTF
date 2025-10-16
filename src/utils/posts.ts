@@ -119,9 +119,12 @@ export function getArticleBySlug(
   if (index === -1) {
     return null;
   }
-  const previous: Article | null = index > 0 ? articles[index + 1] : null;
-  const next: Article | null =
-    index < articles.length - 1 ? articles[index - 1] : null;
+  // articles는 최신순(내림차순) 정렬되어 있음
+  // 이전 글: 현재보다 오래된 글 → index + 1 (경계 체크: index < length - 1)
+  const previous: Article | null =
+    index < articles.length - 1 ? articles[index + 1] : null;
+  // 다음 글: 현재보다 최신 글 → index - 1 (경계 체크: index > 0)
+  const next: Article | null = index > 0 ? articles[index - 1] : null;
   return {
     ...articles[index],
     previous,

@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { Button, Section, Typo } from "@/components/ui";
+import { Button, NewTag, Section, Typo } from "@/components/ui";
 import { FlexAlign, FlexJustify, HStack, VStack } from "@/components/ui/stack";
 import { getArticleBySlug } from "@/utils/posts";
 
@@ -35,7 +35,19 @@ export default function ArticleDetail() {
           뒤로가기
         </Button>
         <div className={s.header}>
-          <Typo.Headline className={s.title}>{article.title}</Typo.Headline>
+          <Typo.Headline className={s.title}>
+            {article.title}
+            {(() => {
+              const articleDate = new Date(article.date);
+              const oneWeekAgo = new Date();
+              oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+              return articleDate >= oneWeekAgo ? (
+                <span style={{ marginLeft: 8 }}>
+                  <NewTag />
+                </span>
+              ) : null;
+            })()}
+          </Typo.Headline>
           <Typo.Body className={s.date}>
             {new Date(article.date).toLocaleDateString("ko-KR")}
           </Typo.Body>
