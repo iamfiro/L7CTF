@@ -21,55 +21,72 @@ export interface WinnersData {
 
 // 샘플 데이터
 export const Winners: WinnersData = {
-  "2025": {
-    adult: {
-      first: { name: "Hide on ba/sh" },
-      second: { name: "Hide on ba/sh" },
-      third: { name: "Hide on ba/sh" },
-    },
-    highSchool: {
-      first: { name: "Hide on ba/sh" },
-      second: { name: "Hide on ba/sh" },
-      third: { name: "Hide on ba/sh" },
-    },
-    middleSchool: {
-      first: { name: "Hide on ba/sh" },
-      second: { name: "Hide on ba/sh" },
-      third: { name: "Hide on ba/sh" },
-    },
-  },
+  // "2025": {
+  //   adult: {
+  //     first: { name: "???" },
+  //     second: { name: "???" },
+  //     third: { name: "???" },
+  //   },
+  //   highSchool: {
+  //     first: { name: "???" },
+  //     second: { name: "???" },
+  //     third: { name: "???" },
+  //   },
+  //   middleSchool: {
+  //     first: { name: "???" },
+  //     second: { name: "???" },
+  //     third: { name: "???" },
+  //   },
+  // },
   "2024": {
     adult: {
-      first: { name: "Hide on ba/sh" },
-      second: { name: "Hide on ba/sh" },
-      third: { name: "Hide on ba/sh" },
+      first: { name: "clay419" },
+      second: { name: "이정주" },
+      third: { name: "S1ro1n3heWo0" },
     },
     highSchool: {
-      first: { name: "Hide on ba/sh" },
-      second: { name: "Hide on ba/sh" },
-      third: { name: "Hide on ba/sh" },
+      first: { name: "Nightcord at 13:37" },
+      second: { name: "PLAYLIST" },
+      third: { name: "pdw0412" },
     },
     middleSchool: {
-      first: { name: "Hide on ba/sh" },
-      second: { name: "Hide on ba/sh" },
-      third: { name: "Hide on ba/sh" },
+      first: { name: "Cheshire" },
+      second: { name: "imnyang" },
+      third: { name: "18 USC § 2441" },
     },
   },
   "2023": {
     adult: {
-      first: { name: "Hide on ba/sh" },
-      second: { name: "Hide on ba/sh" },
-      third: { name: "Hide on ba/sh" },
+      first: { name: "LittleDev0617" },
+      second: { name: "brwook" },
+      third: { name: "고터에버즈두고온사람" },
     },
     highSchool: {
-      first: { name: "Hide on ba/sh" },
-      second: { name: "Hide on ba/sh" },
-      third: { name: "Hide on ba/sh" },
+      first: { name: "mjhmjh1104" },
+      second: { name: "arku" },
+      third: { name: "kio" },
     },
     middleSchool: {
-      first: { name: "Hide on ba/sh" },
-      second: { name: "Hide on ba/sh" },
-      third: { name: "Hide on ba/sh" },
+      first: { name: "Cheshire" },
+      second: { name: "Boramae 영재영" },
+      third: { name: "bmcyver" },
+    },
+  },
+  "2022": {
+    adult: {
+      first: { name: "???" },
+      second: { name: "???" },
+      third: { name: "???" },
+    },
+    highSchool: {
+      first: { name: "???" },
+      second: { name: "???" },
+      third: { name: "???" },
+    },
+    middleSchool: {
+      first: { name: "???" },
+      second: { name: "???" },
+      third: { name: "???" },
     },
   },
 };
@@ -77,7 +94,7 @@ export const Winners: WinnersData = {
 // 유틸리티 함수들
 export const getDivisionName = (division: keyof YearWinners): string => {
   const divisionNames = {
-    adult: "성인부",
+    adult: "일반부",
     highSchool: "고등부",
     middleSchool: "중등부",
   };

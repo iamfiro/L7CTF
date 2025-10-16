@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     element: <Winner />,
   },
   {
-    path: "/creators",
+    path: "/authors",
     element: <Maker />,
   },
   {

@@ -15,7 +15,7 @@ interface Props {
 
 export default function Merit({
   reversed = false,
-  text = "재학생과 졸업생이 함께내는 문제",
+  text = "재학생과 졸업생이 함께하는 대회",
   description = "설명을 적으시오",
   image = "/images/merit/merit_quiz.png",
 }: Props) {

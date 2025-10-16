@@ -53,9 +53,9 @@ export default function Calendar() {
             <VStack gap={16}>
               <Typo.Headline>대회 일정</Typo.Headline>
               <Typo.BodyLarge as={"p"} className={s.description}>
-                대회 일정 섹션의 설명입니다
+                모든 안내는 공지사항을 통해 전달됩니다.
                 <br />
-                대회 일정은 불시에 변경될 수 있습니다.
+                공지사항을 수시로 확인하고 일정에 맞게 준비해주세요.
               </Typo.BodyLarge>
             </VStack>
             <a href={latestSlug} className={s.recent_notice}>

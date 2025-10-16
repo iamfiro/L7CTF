@@ -182,7 +182,7 @@ export default function Hero() {
                   Coming Soon
                 </Typo.BodyLarge>
                 <Typo.Headline>
-                  {timeLeft.days}일 {timeLeft.hours}시간 {timeLeft.minutes}분
+                  {timeLeft.days}일 {timeLeft.hours}시간 {timeLeft.minutes}분 {timeLeft.seconds}초
                 </Typo.Headline>
               </motion.div>
             )}

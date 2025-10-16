@@ -24,7 +24,7 @@ export default function Home() {
       <Sponsor />
       <About />
       <Merit
-        text="재학생과 졸업생이 함께내는 문제"
+        text="재학생과 졸업생이 함께하는 대회"
         description="선린인터넷고등학교 재학생과 졸업생이 함께 출제하여 높은 퀄리티의 문제를 제공합니다."
         image="/images/merit/n1.png"
       />

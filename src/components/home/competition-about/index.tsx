@@ -191,9 +191,9 @@ export default function CompetitionAbout() {
                 download
                 style={{ textDecoration: "none" }}
               >
-                <Button size="lg" leadingIcon={Download}>
+                {/* <Button size="lg" leadingIcon={Download}>
                   대회규칙 / 운영규정 다운 받기
-                </Button>
+                </Button> */}
               </a>
             </motion.div>
           </motion.div>
@@ -212,7 +212,7 @@ export default function CompetitionAbout() {
             부정행위는 서버 로그 분석 및 문제풀이 검토 등을 통해 대회 종료
             이후에도 적발될 수 있습니다. <br />
             부정행위가 적발될 경우 운영진의 판단과 권한으로 참가 자격이
-            박탈되고, 모든 민형사상 책임은 참가자에게 귀속됩니다.
+            박탈되고, 시상에서 제외될 수 있습니다.
           </span>
         </motion.div>
       </div>

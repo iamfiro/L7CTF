@@ -31,8 +31,8 @@ export default function Header() {
               <a href="/winners" data-active={pathname === "/winners"}>
                 <Typo.Body>Winners</Typo.Body>
               </a>
-              <a href="/creators" data-active={pathname === "/creators"}>
-                <Typo.Body>Creators</Typo.Body>
+              <a href="/authors" data-active={pathname === "/authors"}>
+                <Typo.Body>Authors</Typo.Body>
               </a>
               <a href={Link.discord} target="_blank">
                 <Typo.Body>Discord</Typo.Body>

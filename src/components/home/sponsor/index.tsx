@@ -42,7 +42,7 @@ export default function Sponsor() {
       >
         <motion.div variants={sponsorAnimation.itemVariants}>
           <Typo.Body className={s.sponsor_text}>
-            2025 Layer7 CTF는 다음과 같은 기업들과 함께합니다
+            2025 Layer7 CTF는 다음 기업들과 함께합니다
           </Typo.Body>
         </motion.div>
         <VStack gap={64} align={FlexAlign.Center}>
