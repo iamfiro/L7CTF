@@ -18,7 +18,6 @@ const galleryModules = import.meta.glob(
 export default function Gallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-
   // 갤러리 이미지 배열 생성
   const galleryImages = useMemo(() => {
     return Object.entries(galleryModules).map(([path, url], index) => {
@@ -57,12 +56,9 @@ export default function Gallery() {
         <div>
           <Typo.Headline>갤러리</Typo.Headline>
         </div>
-        <div>
-          <VStack gap={24}>
-            <div 
-              className={s.image_container} 
-              tabIndex={0}
-            >
+        <div style={{ width: "100%" }}>
+          <VStack gap={24} fullWidth>
+            <div className={s.image_container} tabIndex={0}>
               <img
                 src={galleryImages[currentIndex].src}
                 alt={galleryImages[currentIndex].alt}

@@ -32,8 +32,15 @@
     }
 }
 
+.image_container {
+    width: 100%;
+}
+
 .image {
     width: 100%;
+    aspect-ratio: 16/9;
+
+    object-fit: contain;
 
     border-radius: $radius-20;
 

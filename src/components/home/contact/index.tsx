@@ -2,7 +2,7 @@ import { Send } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
-import { Button, Section, Typo } from "@/components/ui";
+import { Button, NewTag, Section, Typo } from "@/components/ui";
 import { HStack, VStack } from "@/components/ui/stack";
 import { useScrollAnimation, useStaggerAnimation } from "@/hooks";
 import type { Post } from "@/utils/markdown";
@@ -44,6 +44,17 @@ export default function Contact() {
     delay: 0.4,
     duration: 0.6,
   });
+
+  // 최근 게시물 여부(7일 이내) 판단
+  const isRecent = (dateString?: string): boolean => {
+    if (!dateString) return false;
+    const createdAt = new Date(dateString);
+    if (Number.isNaN(createdAt.getTime())) return false;
+    const now = new Date();
+    const diffMs = now.getTime() - createdAt.getTime();
+    const diffDays = diffMs / (1000 * 60 * 60 * 24);
+    return diffDays <= 7;
+  };
 
   useEffect(() => {
     const loadPosts = async () => {
@@ -107,7 +118,10 @@ export default function Contact() {
                     className={s.notice_item}
                     variants={noticeAnimation.itemVariants}
                   >
-                    <Typo.Body>{post.metadata.title}</Typo.Body>
+                    <HStack gap={8}>
+                      <Typo.Body>{post.metadata.title}</Typo.Body>
+                      {isRecent(post.metadata.date) && <NewTag />}
+                    </HStack>
                     <Typo.Body className={s.notice_date}>
                       {post.metadata.date}
                     </Typo.Body>

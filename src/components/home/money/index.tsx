@@ -53,11 +53,10 @@ export default function Money() {
     return match ? match[0].replace(/\s+/g, "") : rawPrize;
   };
 
-  // 상금 문자열에서 비현금 상품 부분 추출 + 메달 여부 반영
+  // 상금 문자열에서 비현금 상품 부분 추출 (개행 보존)
   const extractGoods = (rawPrize: string) => {
     const afterCash = rawPrize.split("상금 및")[1]?.trim();
-    const goodsText = afterCash ? afterCash.replace(/\n+/g, " ") : "";
-    return goodsText || "-";
+    return (afterCash ?? "").trim() || "-";
   };
 
   return (
@@ -130,49 +129,85 @@ export default function Money() {
                       <td rowSpan={3}>일반부</td>
                       <td>1등</td>
                       <td>{extractCashAmount(Prize.general.first.prize)}</td>
-                      <td>{extractGoods(Prize.general.first.prize)}</td>
+                      <td>
+                        <span style={{ whiteSpace: "pre-line" }}>
+                          {extractGoods(Prize.general.first.prize)}
+                        </span>
+                      </td>
                     </tr>
                     <tr className={s.group_general}>
                       <td>2등</td>
                       <td>{extractCashAmount(Prize.general.second.prize)}</td>
-                      <td>{extractGoods(Prize.general.second.prize)}</td>
+                      <td>
+                        <span style={{ whiteSpace: "pre-line" }}>
+                          {extractGoods(Prize.general.second.prize)}
+                        </span>
+                      </td>
                     </tr>
                     <tr className={s.group_general}>
                       <td>3등</td>
                       <td>{extractCashAmount(Prize.general.third.prize)}</td>
-                      <td>{extractGoods(Prize.general.third.prize)}</td>
+                      <td>
+                        <span style={{ whiteSpace: "pre-line" }}>
+                          {extractGoods(Prize.general.third.prize)}
+                        </span>
+                      </td>
                     </tr>
                     <tr className={s.group_high}>
                       <td rowSpan={3}>고등부</td>
                       <td>1등</td>
                       <td>{extractCashAmount(Prize.high.first.prize)}</td>
-                      <td>{extractGoods(Prize.high.first.prize)}</td>
+                      <td>
+                        <span style={{ whiteSpace: "pre-line" }}>
+                          {extractGoods(Prize.high.first.prize)}
+                        </span>
+                      </td>
                     </tr>
                     <tr className={s.group_high}>
                       <td>2등</td>
                       <td>{extractCashAmount(Prize.high.second.prize)}</td>
-                      <td>{extractGoods(Prize.high.second.prize)}</td>
+                      <td>
+                        <span style={{ whiteSpace: "pre-line" }}>
+                          {extractGoods(Prize.high.second.prize)}
+                        </span>
+                      </td>
                     </tr>
                     <tr className={s.group_high}>
                       <td>3등</td>
                       <td>{extractCashAmount(Prize.high.third.prize)}</td>
-                      <td>{extractGoods(Prize.high.third.prize)}</td>
+                      <td>
+                        <span style={{ whiteSpace: "pre-line" }}>
+                          {extractGoods(Prize.high.third.prize)}
+                        </span>
+                      </td>
                     </tr>
                     <tr className={s.group_middle}>
                       <td rowSpan={3}>중등부</td>
                       <td>1등</td>
                       <td>{extractCashAmount(Prize.middle.first.prize)}</td>
-                      <td>{extractGoods(Prize.middle.first.prize)}</td>
+                      <td>
+                        <span style={{ whiteSpace: "pre-line" }}>
+                          {extractGoods(Prize.middle.first.prize)}
+                        </span>
+                      </td>
                     </tr>
                     <tr className={s.group_middle}>
                       <td>2등</td>
                       <td>{extractCashAmount(Prize.middle.second.prize)}</td>
-                      <td>{extractGoods(Prize.middle.second.prize)}</td>
+                      <td>
+                        <span style={{ whiteSpace: "pre-line" }}>
+                          {extractGoods(Prize.middle.second.prize)}
+                        </span>
+                      </td>
                     </tr>
                     <tr className={s.group_middle}>
                       <td>3등</td>
                       <td>{extractCashAmount(Prize.middle.third.prize)}</td>
-                      <td>{extractGoods(Prize.middle.third.prize)}</td>
+                      <td>
+                        <span style={{ whiteSpace: "pre-line" }}>
+                          {extractGoods(Prize.middle.third.prize)}
+                        </span>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -196,7 +231,9 @@ export default function Money() {
                     <div className={s.card_row}>
                       <Typo.Body className={s.label}>상품</Typo.Body>
                       <Typo.Body>
-                        {extractGoods(Prize.general.first.prize)}
+                        <span style={{ whiteSpace: "pre-line" }}>
+                          {extractGoods(Prize.general.first.prize)}
+                        </span>
                       </Typo.Body>
                     </div>
                   </div>
@@ -214,7 +251,9 @@ export default function Money() {
                     <div className={s.card_row}>
                       <Typo.Body className={s.label}>상품</Typo.Body>
                       <Typo.Body>
-                        {extractGoods(Prize.general.second.prize)}
+                        <span style={{ whiteSpace: "pre-line" }}>
+                          {extractGoods(Prize.general.second.prize)}
+                        </span>
                       </Typo.Body>
                     </div>
                   </div>
@@ -232,7 +271,9 @@ export default function Money() {
                     <div className={s.card_row}>
                       <Typo.Body className={s.label}>상품</Typo.Body>
                       <Typo.Body>
-                        {extractGoods(Prize.general.third.prize)}
+                        <span style={{ whiteSpace: "pre-line" }}>
+                          {extractGoods(Prize.general.third.prize)}
+                        </span>
                       </Typo.Body>
                     </div>
                   </div>
@@ -253,7 +294,9 @@ export default function Money() {
                     <div className={s.card_row}>
                       <Typo.Body className={s.label}>상품</Typo.Body>
                       <Typo.Body>
-                        {extractGoods(Prize.middle.first.prize)}
+                        <span style={{ whiteSpace: "pre-line" }}>
+                          {extractGoods(Prize.middle.first.prize)}
+                        </span>
                       </Typo.Body>
                     </div>
                   </div>
@@ -271,7 +314,9 @@ export default function Money() {
                     <div className={s.card_row}>
                       <Typo.Body className={s.label}>상품</Typo.Body>
                       <Typo.Body>
-                        {extractGoods(Prize.middle.second.prize)}
+                        <span style={{ whiteSpace: "pre-line" }}>
+                          {extractGoods(Prize.middle.second.prize)}
+                        </span>
                       </Typo.Body>
                     </div>
                   </div>
@@ -289,7 +334,9 @@ export default function Money() {
                     <div className={s.card_row}>
                       <Typo.Body className={s.label}>상품</Typo.Body>
                       <Typo.Body>
-                        {extractGoods(Prize.middle.third.prize)}
+                        <span style={{ whiteSpace: "pre-line" }}>
+                          {extractGoods(Prize.middle.third.prize)}
+                        </span>
                       </Typo.Body>
                     </div>
                   </div>
