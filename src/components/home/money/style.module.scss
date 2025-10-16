@@ -28,19 +28,22 @@
     }
 
     th, td {
-        flex: 1;
-        max-width: 230px;
-
         font-size: 18px;
     }
 
+    th:first-child, td:first-child {
+        width: 100px;
+        min-width: 100px;
+    }
+
     th:nth-child(2), td:nth-child(2) {
-        flex: 1;
-        max-width: 240px;
+        width: 150px;
+        min-width: 150px;
     }
     
-    td {
-        width: 280px;
+    th:last-child, td:last-child {
+        width: auto;
+        min-width: 200px;
     }
 
     td {
@@ -161,35 +164,40 @@
     
     .table {
         width: 100%;
-        font-size: 16px;
+        font-size: 14px;
+        table-layout: fixed; // 테이블 레이아웃 고정
 
         thead {
             display: table-header-group;
-            height: 70px;
+            height: 60px;
         }
 
         th, td {
-            width: auto;
-            font-size: 16px;
-            padding: 16px 12px;
+            font-size: 14px;
+            padding: 12px 8px;
             word-break: keep-all;
+            overflow-wrap: break-word;
+            text-align: center;
         }
 
         tbody > tr {
-            height: 80px;
+            height: auto;
+            min-height: 70px;
         }
 
         th:first-child, td:first-child {
-            width: 80px;
+            width: 20%;
+            min-width: 60px;
         }
 
         th:nth-child(2), td:nth-child(2) {
-            width: 120px;
+            width: 30%;
+            min-width: 80px;
         }
 
         th:last-child, td:last-child {
-            width: auto;
-            max-width: 150px;
+            width: 50%;
+            min-width: 120px;
         }
     }
     
@@ -241,20 +249,30 @@
     }
     
     .table {
-        tbody > tr {
-            padding: $spacing-16;
+        font-size: 12px;
+        
+        th, td {
+            font-size: 12px;
+            padding: 10px 6px;
         }
         
-        td {
-            font-size: 14px;
-            
-            &:first-child {
-                font-size: 16px;
-            }
-            
-            &:nth-child(2) {
-                font-size: 13px;
-            }
+        tbody > tr {
+            min-height: 60px;
+        }
+        
+        th:first-child, td:first-child {
+            width: 18%;
+            min-width: 50px;
+        }
+        
+        th:nth-child(2), td:nth-child(2) {
+            width: 32%;
+            min-width: 70px;
+        }
+        
+        th:last-child, td:last-child {
+            width: 50%;
+            min-width: 100px;
         }
     }
     

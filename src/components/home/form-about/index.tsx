@@ -40,10 +40,7 @@ export default function FormAbout() {
           <VStack gap={32}>
             <VStack gap={20}>
               <HStack gap={16} align={FlexAlign.Center}>
-                <motion.div
-                  whileHover={{ rotate: 15, scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
-                >
+                <motion.div transition={{ duration: 0.3 }}>
                   <IconComponent color="white" size={40} />
                 </motion.div>
                 <Typo.Headline>{Competition[0].title}</Typo.Headline>
@@ -90,7 +87,6 @@ export default function FormAbout() {
               <motion.div
                 key={eligibility.name}
                 variants={rightAnimation.itemVariants}
-                whileHover={{ x: 10, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
                 <HStack gap={12} align={FlexAlign.Center}>

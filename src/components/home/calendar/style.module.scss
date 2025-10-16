@@ -28,7 +28,9 @@
     width: 100%;
     
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
     gap: $spacing-20;
 
     background-color: $surface-default;
@@ -42,19 +44,19 @@
         color: $text-default;
     }
 
-    .card_date {
-        color: $text-subtle
+    .card_info_name {
+        color: $text-subtle;
     }
 
     .card_info_value {
         color: $text-default;
     }
 
-    svg {
+    .card_icon {
         width: 40px;
         height: 40px;
-
         color: $text-default;
+        flex-shrink: 0;
     }
 }
 
@@ -73,12 +75,42 @@
         color: $text-black;
     }
 
+    .card_info {
+        color: $text-black;
+    }
+
     .card_info_value {
         color: $text-black;
     }
 
-    svg {
+    .card_icon {
         color: $text-black;
+    }
+}
+
+.recent_notice {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-10;
+
+    text-decoration: none;
+
+    width: auto;
+    min-width: 330px;
+    max-width: 90%;
+    
+    border: 1px solid $border-default;
+    border-radius: $radius-16;
+    padding: $spacing-16 $spacing-20;
+
+    color: $text-default;
+
+    &:hover {
+        background-color: $surface-subtle;
+    }
+
+    .recent_notice_link {
+        color: $text-subtle;
     }
 }
 
@@ -104,10 +136,8 @@
     
     .card {
         width: 100%;
-        padding: $spacing-20;
-        gap: $spacing-16;
         
-        svg {
+        .card_icon {
             width: 32px;
             height: 32px;
         }
@@ -117,12 +147,4 @@
         font-size: 24px;
     }
     
-    .card_date {
-        font-size: 14px;
-    }
-    
-    .card_info_name,
-    .card_info_value {
-        font-size: 14px;
-    }
 }

@@ -1,12 +1,12 @@
-import { motion } from "motion/react";
 import { Send } from "lucide-react";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 import { Button, Section, Typo } from "@/components/ui";
 import { HStack, VStack } from "@/components/ui/stack";
+import { useScrollAnimation, useStaggerAnimation } from "@/hooks";
 import type { Post } from "@/utils/markdown";
 import { getLatestPosts } from "@/utils/posts";
-import { useScrollAnimation, useStaggerAnimation } from "@/hooks";
 
 import s from "./style.module.scss";
 
@@ -17,25 +17,25 @@ export default function Contact() {
   const leftAnimation = useScrollAnimation({
     threshold: 0.2,
     delay: 0.2,
-    duration: 0.8
+    duration: 0.8,
   });
 
   const rightAnimation = useScrollAnimation({
     threshold: 0.2,
     delay: 0.4,
-    duration: 0.8
+    duration: 0.8,
   });
 
   const formAnimation = useStaggerAnimation({
     threshold: 0.2,
     delay: 0.6,
-    duration: 0.6
+    duration: 0.6,
   });
 
   const noticeAnimation = useStaggerAnimation({
     threshold: 0.2,
     delay: 0.4,
-    duration: 0.6
+    duration: 0.6,
   });
 
   useEffect(() => {
@@ -60,12 +60,16 @@ export default function Contact() {
           className={s.notice_wrap}
           id="notice"
           ref={leftAnimation.ref}
-          initial={{ opacity: 0, x: -100 }}
-          animate={leftAnimation.isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+          initial={{ opacity: 0, y: -100 }}
+          animate={
+            leftAnimation.isInView
+              ? { opacity: 1, y: 0 }
+              : { opacity: 0, y: -100 }
+          }
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className={s.notice_title}>
-            <Typo.Body>공지사항</Typo.Body>
+            <Typo.BodyLarge>공지사항</Typo.BodyLarge>
           </div>
           <motion.div
             ref={noticeAnimation.ref}
@@ -109,8 +113,12 @@ export default function Contact() {
         <motion.div
           className={s.form_wrap}
           ref={rightAnimation.ref}
-          initial={{ opacity: 0, x: 100 }}
-          animate={rightAnimation.isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+          initial={{ opacity: 0, y: -100 }}
+          animate={
+            rightAnimation.isInView
+              ? { opacity: 1, y: 0 }
+              : { opacity: 0, y: -100 }
+          }
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <Typo.Display>문의하기</Typo.Display>
@@ -122,14 +130,6 @@ export default function Contact() {
             style={{ marginTop: 24 }}
           >
             <VStack gap={12} className={s.form} fullWidth>
-              <motion.input
-                type="email"
-                placeholder="example@gmail.com"
-                className={s.input}
-                variants={formAnimation.itemVariants}
-                whileFocus={{ scale: 1.02, borderColor: "#007bff" }}
-                transition={{ duration: 0.3 }}
-              />
               <motion.input
                 type="text"
                 placeholder="이름"
@@ -147,10 +147,10 @@ export default function Contact() {
               />
               <motion.div
                 variants={formAnimation.itemVariants}
-                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                style={{ width: "100%" }}
               >
-                <Button leadingIcon={Send} size="lg">
+                <Button leadingIcon={Send} className={s.send_button} size="lg">
                   눌러서 문의하기
                 </Button>
               </motion.div>

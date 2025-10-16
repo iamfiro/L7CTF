@@ -16,11 +16,17 @@
 }
 
 .notice_title {
+    width: fit-content;
+
     padding: $spacing-12 $spacing-24;
 
     background-color: $surface-subtlest;
 
-    border-radius: $radius-10 $radius-10 0 0;
+    border-radius: $radius-14 $radius-14 0 0;
+
+    span {
+        font-weight: 600;
+    }
 }
 
 .notice_item {

@@ -73,10 +73,7 @@ export default function CompetitionAbout() {
             <VStack gap={40}>
               <VStack gap={20}>
                 <HStack gap={16} align={FlexAlign.Center}>
-                  <motion.div
-                    whileHover={{ rotate: 15, scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                  >
+                  <motion.div transition={{ duration: 0.3 }}>
                     <IconComponent color="white" size={40} />
                   </motion.div>
                   <Typo.Headline>{Competition[1].title}</Typo.Headline>
@@ -107,7 +104,6 @@ export default function CompetitionAbout() {
                     <motion.div
                       key={eligibility.name}
                       variants={eligibilityAnimation.itemVariants}
-                      whileHover={{ x: 10, scale: 1.02 }}
                       transition={{ duration: 0.3 }}
                     >
                       <HStack gap={12} align={FlexAlign.Center}>
@@ -206,10 +202,9 @@ export default function CompetitionAbout() {
         >
           <span>
             부정행위는 서버 로그 분석 및 문제풀이 검토 등을 통해 대회 종료
-            이후에도 적발될 수 있습니다. 부정행위가 적발될 경우 운영진의 판단과
-            권한으로 참가 자격이 박탈되고,
-            <br /> 모든 민형사상 책임은 참가자에게 귀속되며 차년도 참가 자격이
-            제한됩니다.
+            이후에도 적발될 수 있습니다. <br />
+            부정행위가 적발될 경우 운영진의 판단과 권한으로 참가 자격이
+            박탈되고, 모든 민형사상 책임은 참가자에게 귀속됩니다.
           </span>
         </motion.div>
       </div>

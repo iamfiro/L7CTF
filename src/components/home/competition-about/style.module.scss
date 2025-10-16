@@ -33,6 +33,7 @@
 
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: flex-end;
 }
 
@@ -50,6 +51,12 @@
 
 .eligibility_name, .eligibility_description, .preparation_name {
     color: $text-subtle;
+}
+
+.eligibility_description {
+    display: block;
+
+    max-width: 310px;
 }
 
 .cheat_warning {

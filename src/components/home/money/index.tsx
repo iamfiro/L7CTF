@@ -198,7 +198,6 @@ export default function Money() {
                 <motion.div
                   key={`${item.id}-${index}`}
                   className={s.carousel_slide}
-                  whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.3 }}
                 >
                   <img src={item.src} alt={item.alt} />

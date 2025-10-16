@@ -3,8 +3,8 @@ import { File, Flag } from "lucide-react";
 export const Competition = [
   {
     icon: File,
-    title: "대회 접수",
-    startDate: new Date("2023-12-01T00:00:00").getTime(),
+    title: "대회 신청",
+    startDate: new Date("2025-12-01T00:00:00").getTime(),
     endDate: new Date("2026-12-31T23:59:59").getTime(),
     description: "접수 당일 Layer7 CTF 웹사이트에서 공개",
     eligibility: [
@@ -25,8 +25,8 @@ export const Competition = [
   {
     icon: Flag,
     title: "대회 본선",
-    startDate: new Date("2025-01-15T00:00:00").getTime(),
-    endDate: new Date("2025-01-15T23:59:59").getTime(),
+    startDate: new Date("2026-01-15T00:00:00").getTime(),
+    endDate: new Date("2026-01-15T23:59:59").getTime(),
     description: "대회 본선 기간입니다.",
     eligibility: [
       {
@@ -37,11 +37,7 @@ export const Competition = [
         name: "진행 방식",
         value: "문제풀이(Jeopardy)",
       },
-      {
-        name: "참가 자격",
-        value: "만 9세 ~ 만 18세",
-      },
     ],
-    preparation: ["컴퓨터", "인터넷"],
+    preparation: ["노트북 또는 PC", "랜선 케이블", "초코파이"],
   },
 ];

@@ -11,7 +11,14 @@ export default function Footer() {
     <Section padding={32}>
       <footer className={s.footer}>
         <VStack className={s.footer_content} gap={24}>
-          <Typo.BodyLarge>Layer7 CTF</Typo.BodyLarge>
+          <HStack gap={8} align={FlexAlign.Center}>
+            <img
+              src="/layer7.svg"
+              alt="Layer7 logo"
+              className={s.footer_logo}
+            />
+            <Typo.BodyLarge>Layer7</Typo.BodyLarge>
+          </HStack>
           <Typo.Body className={s.footer_address}>
             선린인터넷고등학교 정보보호과 해킹 전공동아리
             <br />
@@ -21,32 +28,35 @@ export default function Footer() {
             © 2025 Layer7, Hacking Club. All Rights Reserved.
           </Typo.Subtext>
         </VStack>
-        <VStack gap={24} align={FlexAlign.End} className={s.footer_right}>
-          <HStack gap={48} className={s.moderator_wrap}>
-            <VStack gap={10}>
-              <Typo.Body className={s.moderator_title}>총괄</Typo.Body>
-              <Typo.Body>이동건</Typo.Body>
-            </VStack>
-            <VStack gap={10}>
-              <Typo.Body className={s.moderator_title}>운영진</Typo.Body>
-              <HStack gap={8} className={s.moderator_list}>
-                <Typo.Body>장재영</Typo.Body>
-                <Typo.Body>유승주</Typo.Body>
-                <Typo.Body>김세중</Typo.Body>
-                <Typo.Body>최윤호</Typo.Body>
+        <VStack gap={12} align={FlexAlign.End} className={s.footer_right}>
+          <HStack gap={24}>
+            <a href="/makers" className={s.creator_link}>
+              <HStack gap={4}>
+                <Typo.Body>Instagram</Typo.Body>
+                <ArrowUpRight size={20} />
               </HStack>
-            </VStack>
-            <VStack gap={10}>
-              <Typo.Body className={s.moderator_title}>개발자</Typo.Body>
-              <Typo.Body>조성주</Typo.Body>
-            </VStack>
+            </a>
+            <a href="/makers" className={s.creator_link}>
+              <HStack gap={4}>
+                <Typo.Body>Facebook</Typo.Body>
+                <ArrowUpRight size={20} />
+              </HStack>
+            </a>
           </HStack>
-          <a href="/makers" className={s.creator_link}>
-            <HStack gap={4}>
-              <Typo.Body>출제자 바로가기</Typo.Body>
-              <ArrowUpRight size={20} />
-            </HStack>
-          </a>
+          <HStack gap={24}>
+            <a href="/makers" className={s.creator_link}>
+              <HStack gap={4}>
+                <Typo.Body>Github</Typo.Body>
+                <ArrowUpRight size={20} />
+              </HStack>
+            </a>
+            <a href="/makers" className={s.creator_link}>
+              <HStack gap={4}>
+                <Typo.Body>Blog</Typo.Body>
+                <ArrowUpRight size={20} />
+              </HStack>
+            </a>
+          </HStack>
         </VStack>
       </footer>
     </Section>
