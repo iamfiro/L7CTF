@@ -69,4 +69,9 @@
         padding: $spacing-6 $spacing-10;
         font-size: 14px;
     }
+
+    .sponsor_images {
+        flex-direction: column;
+        gap: $spacing-12;
+    }
 }

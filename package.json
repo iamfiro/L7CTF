@@ -12,6 +12,7 @@
   "dependencies": {
     "@types/marked": "^5.0.2",
     "@types/node": "^24.3.1",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.542.0",
     "marked": "^16.4.0",
     "motion": "^12.23.24",

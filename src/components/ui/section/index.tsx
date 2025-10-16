@@ -8,6 +8,7 @@ interface Props {
   gap?: number;
   align?: FlexAlign;
   className?: string;
+  id?: string;
 }
 
 export default function Section({
@@ -16,10 +17,12 @@ export default function Section({
   gap = 48,
   align,
   className,
+  id,
 }: Props) {
   return (
     <section
       className={`${s.container} ${className}`}
+      id={id}
       style={{ paddingBlock: padding, gap, alignItems: align }}
     >
       {children}

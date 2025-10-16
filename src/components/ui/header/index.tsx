@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import { Light } from "@/components/ui";
+import { Link } from "@/data/link";
 
 import Button from "../button";
 import { HStack } from "../stack";
@@ -33,7 +34,7 @@ export default function Header() {
               <a href="creators" data-active={pathname === "/creators"}>
                 <Typo.Body>Creators</Typo.Body>
               </a>
-              <a href="https://discord.gg/bDWtHst4QX" target="_blank">
+              <a href={Link.discord} target="_blank">
                 <Typo.Body>Discord</Typo.Body>
                 <ArrowUpRight />
               </a>
@@ -49,10 +50,14 @@ export default function Header() {
           </a>
 
           <HStack gap={10} className={s.header_buttons}>
-            <Button variant="secondary" className={s.inquiry_button}>
-              문의하기
-            </Button>
-            <Button className={s.ctf_button}>Layer7 CTF 참가 신청하기</Button>
+            <a href="#contact">
+              <Button variant="secondary" className={s.inquiry_button}>
+                문의하기
+              </Button>
+            </a>
+            <a href={Link.registration} target="_blank">
+              <Button className={s.ctf_button}>Layer7 CTF 참가 신청하기</Button>
+            </a>
           </HStack>
 
           <div className={s.mobile_right}>

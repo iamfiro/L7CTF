@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Button, Section, Typo } from "@/components/ui";
 import { FlexAlign, HStack, VStack } from "@/components/ui/stack";
 import { Competition } from "@/data/competition";
+import { Link } from "@/data/link";
 import {
   useParallaxAnimation,
   useScrollAnimation,
@@ -185,7 +186,7 @@ export default function CompetitionAbout() {
               style={{ marginTop: 32 }}
             >
               <a
-                href="/files/2025_layer7_ctf_rules.pdf"
+                href={Link.rule_file}
                 target="_blank"
                 download
                 style={{ textDecoration: "none" }}

@@ -1,3 +1,4 @@
+import Lottie from "lottie-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
@@ -5,6 +6,7 @@ import { Button, Typo } from "@/components/ui";
 import Spacing from "@/components/ui/spacing";
 import { FlexAlign, VStack } from "@/components/ui/stack";
 import { Competition } from "@/data/competition";
+import { Link } from "@/data/link";
 import { useParallaxAnimation, useScrollAnimation } from "@/hooks";
 
 import s from "./style.module.scss";
@@ -17,6 +19,38 @@ export default function Hero() {
   });
 
   const mapAnimation = useParallaxAnimation();
+
+  // flag 클릭/애니메이션 상태
+  const [isFlagClicked, setIsFlagClicked] = useState(false);
+  const [isGreenClicked, setIsGreenClicked] = useState(false);
+  const [lottieData, setLottieData] = useState<object | null>(null);
+
+  const handleFlagClick = () => {
+    if (isFlagClicked) return;
+    setIsFlagClicked(true);
+  };
+
+  const handleGreenClick = () => {
+    if (isGreenClicked) return;
+    setIsGreenClicked(true);
+  };
+
+  // Lottie JSON 선로딩 (한 번만)
+  useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const res = await fetch("/lottie/confetti.json");
+        const data: object = await res.json();
+        if (mounted) setLottieData(data);
+      } catch {
+        // ignore load error
+      }
+    })();
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   // 접수 기간 확인
   const now = Date.now();
@@ -148,8 +182,7 @@ export default function Hero() {
                   Coming Soon
                 </Typo.BodyLarge>
                 <Typo.Headline>
-                  {timeLeft.days}일 {timeLeft.hours}시간 {timeLeft.minutes}분{" "}
-                  {timeLeft.seconds}초
+                  {timeLeft.days}일 {timeLeft.hours}시간 {timeLeft.minutes}분
                 </Typo.Headline>
               </motion.div>
             )}
@@ -164,7 +197,11 @@ export default function Hero() {
                 }
                 transition={{ duration: 0.6, delay: 1.0 }}
               >
-                <Button size="lg">Layer7 CTF 참가 신청하기</Button>
+                <a href={Link.registration} target="_blank">
+                  <Button className={s.ctf_button}>
+                    Layer7 CTF 참가 신청하기
+                  </Button>
+                </a>
               </motion.div>
             )}
 
@@ -208,6 +245,73 @@ export default function Hero() {
           className={s.hero_map_inner}
           style={{ opacity: mapAnimation.isInView ? mapAnimation.opacity : 0 }}
         >
+          <motion.img
+            src="/flag.svg"
+            alt="Layer7 CTF Flag"
+            className={s.hero_flag}
+            onClick={handleFlagClick}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: isFlagClicked ? 0 : 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          />
+          <motion.img
+            src="/flag-green.svg"
+            alt="Layer7 CTF Flag Green"
+            className={s.hero_flag_green}
+            onClick={handleGreenClick}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: isGreenClicked ? 0 : 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          />
+          {isFlagClicked && (
+            <div className={s.flag_wrap}>
+              <>
+                {lottieData && (
+                  <Lottie
+                    className={s.flag_lottie}
+                    animationData={lottieData}
+                    loop={false}
+                    autoplay
+                  />
+                )}
+                <motion.div
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: [10, 0, -10], opacity: [0, 1, 0] }}
+                  transition={{
+                    duration: 2,
+                    ease: "easeOut",
+                  }}
+                >
+                  <Typo.Body className={s.flag_text}>
+                    Layer7{`{m7s8zxn3@2025}`}
+                  </Typo.Body>
+                </motion.div>
+              </>
+            </div>
+          )}
+          {isGreenClicked && (
+            <div className={s.flag_wrap_green}>
+              <>
+                {lottieData && (
+                  <Lottie
+                    className={s.flag_lottie}
+                    animationData={lottieData}
+                    loop={false}
+                    autoplay
+                  />
+                )}
+                <motion.div
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: [10, 0, -10], opacity: [0, 1, 0] }}
+                  transition={{ duration: 2, ease: "easeOut" }}
+                >
+                  <Typo.Body className={s.flag_text_green}>
+                    Layer7{`{gR33n-ctf}`}
+                  </Typo.Body>
+                </motion.div>
+              </>
+            </div>
+          )}
           <img
             src="/images/hero/map.svg"
             alt="Layer7 CTF"

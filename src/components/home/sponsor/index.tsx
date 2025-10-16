@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 
 import { Section, Typo } from "@/components/ui";
-import { FlexAlign, FlexJustify, HStack, VStack } from "@/components/ui/stack";
+import { FlexAlign, HStack, VStack } from "@/components/ui/stack";
 import { useScrollAnimation, useStaggerAnimation } from "@/hooks";
 
 import s from "./style.module.scss";
@@ -40,15 +40,7 @@ export default function Sponsor() {
         initial="hidden"
         animate={sponsorAnimation.isInView ? "visible" : "hidden"}
       >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={
-            sponsorAnimation.isInView
-              ? { opacity: 1, y: 0 }
-              : { opacity: 0, y: 20 }
-          }
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
+        <motion.div variants={sponsorAnimation.itemVariants}>
           <Typo.Body className={s.sponsor_text}>
             2025 Layer7 CTF는 다음과 같은 기업들과 함께합니다
           </Typo.Body>
@@ -59,14 +51,20 @@ export default function Sponsor() {
               <div className={`${s.sponsor_title} ${s.diamond}`}>
                 <Typo.Body>Diamond Sponsor</Typo.Body>
               </div>
-              <HStack gap={20} align={FlexAlign.Center}>
+              <HStack
+                gap={20}
+                align={FlexAlign.Center}
+                className={s.sponsor_images}
+              >
                 <motion.img
+                  variants={sponsorAnimation.itemVariants}
                   src="/images/sponsor/dreamhack.png"
                   alt="Dreamhack sponsor"
                   transition={{ duration: 0.3 }}
                   style={{ height: 77 }}
                 />
                 <motion.img
+                  variants={sponsorAnimation.itemVariants}
                   src="/images/sponsor/hspace.svg"
                   alt="Hspace sponsor"
                   transition={{ duration: 0.3 }}

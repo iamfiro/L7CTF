@@ -61,7 +61,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <Section>
+    <Section id="contact">
       <HStack className={s.content}>
         <motion.div
           className={s.notice_wrap}
