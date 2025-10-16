@@ -9,9 +9,13 @@ import s from "./style.module.scss";
 
 export default function Money() {
   const goods = [
-    { id: 1, src: "/images/goods/airpods.png", alt: "상품 [AirPods]" },
-    { id: 2, src: "/images/goods/iphone.webp", alt: "상품 [iPhone]" },
-    { id: 3, src: "/images/goods/pad.png", alt: "상품 [DreamHack 장패드]" },
+    {
+      id: 1,
+      src: "/images/goods/dreamhack_stater.png",
+      alt: "상품 [드림핵 1년 구독권]",
+    },
+    { id: 2, src: "/images/goods/airpods.png", alt: "상품 [AirPods]" },
+    { id: 4, src: "/images/goods/pad.png", alt: "상품 [DreamHack 장패드]" },
   ];
 
   // 아이템 3회 반복 + 두 번째 반복 뒤에 첫 아이템을 한 개 더 삽입해 끊김 최소화

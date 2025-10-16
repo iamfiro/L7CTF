@@ -1,5 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 
+import { Link } from "@/data/link";
+
 import Section from "../section";
 import { FlexAlign, HStack, VStack } from "../stack";
 import Typo from "../typo";
@@ -30,13 +32,13 @@ export default function Footer() {
         </VStack>
         <HStack gap={10} align={FlexAlign.End} className={s.footer_right}>
           <VStack gap={10}>
-            <a href="/makers" className={s.creator_link}>
+            <a href={Link.instagram} target="_blank" className={s.creator_link}>
               <HStack gap={4}>
                 <Typo.Body>Instagram</Typo.Body>
                 <ArrowUpRight size={18} />
               </HStack>
             </a>
-            <a href="/makers" className={s.creator_link}>
+            <a href={Link.github} target="_blank" className={s.creator_link}>
               <HStack gap={4}>
                 <Typo.Body>Github</Typo.Body>
                 <ArrowUpRight size={18} />
@@ -44,13 +46,13 @@ export default function Footer() {
             </a>
           </VStack>
           <VStack gap={10}>
-            <a href="/makers" className={s.creator_link}>
+            <a href={Link.facebook} target="_blank" className={s.creator_link}>
               <HStack gap={4}>
                 <Typo.Body>Facebook</Typo.Body>
                 <ArrowUpRight size={18} />
               </HStack>
             </a>
-            <a href="/makers" className={s.creator_link}>
+            <a href={Link.blog} target="_blank" className={s.creator_link}>
               <HStack gap={4}>
                 <Typo.Body>Blog</Typo.Body>
                 <ArrowUpRight size={18} />
