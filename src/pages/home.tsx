@@ -23,7 +23,17 @@ export default function Home() {
       <Hero />
       <Sponsor />
       <About />
-      <Merit />
+      <Merit
+        text="문제 개쩐다는 그런 타이틀을 적어주세요"
+        description="설명을 적으시오"
+        image="/images/merit/merit_quiz.png"
+      />
+      <Merit
+        text="문제 개쩐다는 그런 타이틀을 적어주세요"
+        description="설명을 적으시오"
+        image="/images/merit/merit_quiz.png"
+        reversed
+      />
       <Calendar />
       <FormAbout />
       <CompetitionAbout />

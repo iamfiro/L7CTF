@@ -26,6 +26,10 @@
     object-fit: contain;
 }
 
+.description {
+    color: $text-subtle;
+}
+
 @media (max-width: 768px) {
     .merit {
         flex-direction: column;
