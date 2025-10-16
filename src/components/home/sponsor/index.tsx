@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 
 import { Section, Typo } from "@/components/ui";
-import { FlexAlign, HStack, VStack } from "@/components/ui/stack";
+import { FlexAlign, FlexJustify, HStack, VStack } from "@/components/ui/stack";
 import { useScrollAnimation, useStaggerAnimation } from "@/hooks";
 
 import s from "./style.module.scss";
@@ -50,30 +50,32 @@ export default function Sponsor() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <Typo.Body className={s.sponsor_text}>
-            Layer7 CTF는 다음과 같은 기업들과 함께합니다
+            2025 Layer7 CTF는 다음과 같은 기업들과 함께합니다
           </Typo.Body>
         </motion.div>
-        <VStack gap={64}>
+        <VStack gap={64} align={FlexAlign.Center}>
           <motion.div variants={sponsorAnimation.itemVariants}>
             <VStack gap={24} align={FlexAlign.Center}>
               <div className={`${s.sponsor_title} ${s.diamond}`}>
                 <Typo.Body>Diamond Sponsor</Typo.Body>
               </div>
-              <VStack gap={18} align={FlexAlign.Center}>
+              <HStack gap={20} align={FlexAlign.Center}>
                 <motion.img
-                  src="/images/sponsor/theori.png"
-                  alt="Theori sponsor"
+                  src="/images/sponsor/dreamhack.png"
+                  alt="Dreamhack sponsor"
                   transition={{ duration: 0.3 }}
+                  style={{ height: 77 }}
                 />
                 <motion.img
-                  src="/images/sponsor/hspace.png"
+                  src="/images/sponsor/hspace.svg"
                   alt="Hspace sponsor"
                   transition={{ duration: 0.3 }}
+                  style={{ height: 40 }}
                 />
-              </VStack>
+              </HStack>
             </VStack>
           </motion.div>
-          <motion.div variants={sponsorAnimation.itemVariants}>
+          {/* <motion.div variants={sponsorAnimation.itemVariants}>
             <VStack gap={24} align={FlexAlign.Center}>
               <div className={`${s.sponsor_title} ${s.gold}`}>
                 <Typo.Body>Gold Sponsor</Typo.Body>
@@ -91,7 +93,7 @@ export default function Sponsor() {
                 />
               </VStack>
             </VStack>
-          </motion.div>
+          </motion.div> */}
         </VStack>
       </motion.div>
     </Section>
@@ -103,9 +105,9 @@ function Hosting() {
     <div className={s.hosting}>
       <HStack gap={20} align={FlexAlign.Center}>
         <Typo.Body className={s.sponsor_text}>주최</Typo.Body>
-        <HStack gap={12}>
+        <HStack gap={12} align={FlexAlign.Center}>
           <motion.img
-            src="/images/sponsor/sunrin.png"
+            src="/sunrin.svg"
             alt="Sunrin sponsor"
             className={s.sunrin}
             transition={{ duration: 0.3 }}
@@ -115,7 +117,7 @@ function Hosting() {
       </HStack>
       <HStack gap={20} align={FlexAlign.Center}>
         <Typo.Body className={s.sponsor_text}>주관</Typo.Body>
-        <HStack gap={12}>
+        <HStack gap={12} align={FlexAlign.Center}>
           <motion.img
             src="/layer7.svg"
             alt="Layer7 sponsor"

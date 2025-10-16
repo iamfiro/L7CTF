@@ -8,8 +8,9 @@
 }
 
 .headline {
-  font-size: 46px;
-  line-height: 62px;
+  /* PC 기준 최대값을 유지하고, 화면 크기에 따라 유동적으로 축소 */
+  font-size: clamp(24px, 5vw, 46px);
+  line-height: clamp(32px, 6.5vw, 62px);
   font-weight: 500;
 }
 

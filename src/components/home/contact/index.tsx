@@ -13,6 +13,13 @@ import s from "./style.module.scss";
 export default function Contact() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+  const isDisabled = message.trim().length === 0;
+
+  const subject = `[Layer7 CTF 문의] ${name || ""}`;
+  const bodyLines = `${message || ""}\n\n- 보낸이: ${name || "익명"}`;
+  const mailtoHref = `mailto:ctf@layer7.kr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines)}`;
 
   const leftAnimation = useScrollAnimation({
     threshold: 0.2,
@@ -137,6 +144,8 @@ export default function Contact() {
                 variants={formAnimation.itemVariants}
                 whileFocus={{ scale: 1.02, borderColor: "#007bff" }}
                 transition={{ duration: 0.3 }}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
               <motion.textarea
                 placeholder="문의 내용을 입력해주세요."
@@ -144,15 +153,29 @@ export default function Contact() {
                 variants={formAnimation.itemVariants}
                 whileFocus={{ scale: 1.02, borderColor: "#007bff" }}
                 transition={{ duration: 0.3 }}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               />
               <motion.div
                 variants={formAnimation.itemVariants}
                 whileTap={{ scale: 0.95 }}
                 style={{ width: "100%" }}
               >
-                <Button leadingIcon={Send} className={s.send_button} size="lg">
-                  눌러서 문의하기
-                </Button>
+                <a
+                  href={isDisabled ? undefined : mailtoHref}
+                  onClick={isDisabled ? (e) => e.preventDefault() : undefined}
+                  aria-disabled={isDisabled}
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button
+                    leadingIcon={Send}
+                    className={s.send_button}
+                    size="lg"
+                    disabled={isDisabled}
+                  >
+                    눌러서 문의하기
+                  </Button>
+                </a>
               </motion.div>
             </VStack>
           </motion.div>

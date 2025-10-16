@@ -184,9 +184,16 @@ export default function CompetitionAbout() {
               transition={{ duration: 0.8, delay: 0.6 }}
               style={{ marginTop: 32 }}
             >
-              <Button size="lg" leadingIcon={Download}>
-                대회규칙 / 운영규정 다운 받기
-              </Button>
+              <a
+                href="/files/2025_layer7_ctf_rules.pdf"
+                target="_blank"
+                download
+                style={{ textDecoration: "none" }}
+              >
+                <Button size="lg" leadingIcon={Download}>
+                  대회규칙 / 운영규정 다운 받기
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
         </div>

@@ -1,10 +1,11 @@
 import { motion } from "motion/react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+
 import { Button, Typo } from "@/components/ui";
 import Spacing from "@/components/ui/spacing";
 import { FlexAlign, VStack } from "@/components/ui/stack";
-import { useScrollAnimation, useParallaxAnimation } from "@/hooks";
 import { Competition } from "@/data/competition";
+import { useParallaxAnimation, useScrollAnimation } from "@/hooks";
 
 import s from "./style.module.scss";
 
@@ -12,9 +13,8 @@ export default function Hero() {
   const textAnimation = useScrollAnimation({
     threshold: 0.2,
     delay: 0.2,
-    duration: 0.8
+    duration: 0.8,
   });
-
 
   const mapAnimation = useParallaxAnimation();
 
@@ -22,7 +22,7 @@ export default function Hero() {
   const now = Date.now();
   const registrationStart = Competition[0].startDate;
   const registrationEnd = Competition[0].endDate;
-  
+
   const getRegistrationStatus = () => {
     if (now < registrationStart) {
       return "coming-soon";
@@ -40,22 +40,26 @@ export default function Hero() {
     days: 0,
     hours: 0,
     minutes: 0,
-    seconds: 0
+    seconds: 0,
   });
 
   useEffect(() => {
     const calculateTimeLeft = () => {
       const difference = registrationStart - Date.now();
-      
+
       if (difference > 0) {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const hours = Math.floor(
+          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor(
+          (difference % (1000 * 60 * 60)) / (1000 * 60),
+        );
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-        
+
         return { days, hours, minutes, seconds };
       }
-      
+
       return { days: 0, hours: 0, minutes: 0, seconds: 0 };
     };
 
@@ -70,40 +74,50 @@ export default function Hero() {
 
   return (
     <section className={s.hero}>
-      <motion.div 
+      <motion.div
         className={s.hero_text}
         ref={textAnimation.ref}
         initial={{ opacity: 0, y: 50 }}
-        animate={textAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        animate={
+          textAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
+        }
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <VStack gap={12} align={FlexAlign.Center}>
-          <motion.h2 
+          <motion.h2
             className={s.hero_subtitle}
             initial={{ opacity: 0, y: 20 }}
-            animate={textAnimation.isInView ? { 
-              opacity: 1, 
-              y: 0
-            } : { opacity: 0, y: 20 }}
-            transition={{ 
-              duration: 0.6, 
+            animate={
+              textAnimation.isInView
+                ? {
+                    opacity: 1,
+                    y: 0,
+                  }
+                : { opacity: 0, y: 20 }
+            }
+            transition={{
+              duration: 0.6,
               delay: 0.2,
-              ease: "easeOut"
+              ease: "easeOut",
             }}
           >
             We hack the
           </motion.h2>
-          <motion.h1 
+          <motion.h1
             className={s.hero_title}
             initial={{ opacity: 0, y: 20 }}
-            animate={textAnimation.isInView ? { 
-              opacity: 1, 
-              y: 0
-            } : { opacity: 0, y: 20 }}
-            transition={{ 
-              duration: 0.6, 
+            animate={
+              textAnimation.isInView
+                ? {
+                    opacity: 1,
+                    y: 0,
+                  }
+                : { opacity: 0, y: 20 }
+            }
+            transition={{
+              duration: 0.6,
               delay: 0.4,
-              ease: "easeOut"
+              ease: "easeOut",
             }}
           >
             2025 Layer7 CTF
@@ -111,50 +125,60 @@ export default function Hero() {
         </VStack>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={textAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-        >
-          <Typo.BodyLarge className={s.hero_description}>
-            2025.11.24 - 선린인터넷고등학교
-          </Typo.BodyLarge>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={textAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={
+            textAnimation.isInView
+              ? { opacity: 1, y: 0 }
+              : { opacity: 0, y: 20 }
+          }
           transition={{ duration: 0.6, delay: 0.9 }}
         >
           <div className={s.buttons}>
             {registrationStatus === "coming-soon" && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                animate={textAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                animate={
+                  textAnimation.isInView
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 20 }
+                }
                 transition={{ duration: 0.6, delay: 1.0 }}
                 className={s.countdown_container}
               >
-                <Typo.BodyLarge className={s.coming_soon}>Coming Soon</Typo.BodyLarge>
-                <div className={s.countdown}>
-                  {timeLeft.days}일 {timeLeft.hours}시간 {timeLeft.minutes}분 {timeLeft.seconds}초
-                </div>
+                <Typo.BodyLarge className={s.coming_soon}>
+                  Coming Soon
+                </Typo.BodyLarge>
+                <Typo.Headline>
+                  {timeLeft.days}일 {timeLeft.hours}시간 {timeLeft.minutes}분{" "}
+                  {timeLeft.seconds}초
+                </Typo.Headline>
               </motion.div>
             )}
-            
+
             {registrationStatus === "open" && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                animate={textAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                animate={
+                  textAnimation.isInView
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 20 }
+                }
                 transition={{ duration: 0.6, delay: 1.0 }}
               >
                 <Button size="lg">Layer7 CTF 참가 신청하기</Button>
               </motion.div>
             )}
-            
+
             {registrationStatus === "closed" && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                animate={textAnimation.isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                animate={
+                  textAnimation.isInView
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 20 }
+                }
                 transition={{ duration: 0.6, delay: 1.0 }}
               >
-                <Typo.BodyLarge className={s.closed}>신청 종료됨</Typo.BodyLarge>
+                <Typo.Headline className={s.closed}>신청 종료됨</Typo.Headline>
               </motion.div>
             )}
           </div>
@@ -164,15 +188,19 @@ export default function Hero() {
       <motion.div
         ref={mapAnimation.ref}
         initial={{ y: 50 }}
-        animate={mapAnimation.isInView ? {
-          y: 0
-        } : {
-          y: 50
-        }}
+        animate={
+          mapAnimation.isInView
+            ? {
+                y: 0,
+              }
+            : {
+                y: 50,
+              }
+        }
         transition={{
           duration: 0.8,
           delay: 0.3,
-          ease: "easeOut"
+          ease: "easeOut",
         }}
         className={s.hero_map_container}
       >
@@ -180,7 +208,11 @@ export default function Hero() {
           className={s.hero_map_inner}
           style={{ opacity: mapAnimation.isInView ? mapAnimation.opacity : 0 }}
         >
-          <img src="/images/hero/map.svg" alt="Layer7 CTF" className={s.hero_map} />
+          <img
+            src="/images/hero/map.svg"
+            alt="Layer7 CTF"
+            className={s.hero_map}
+          />
           <div className={s.hero_map_overlay} />
         </motion.div>
       </motion.div>
