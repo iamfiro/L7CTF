@@ -20,7 +20,7 @@ export default function Sponsor() {
   });
 
   return (
-    <Section padding={32} gap={64}>
+    <Section padding={64} gap={64}>
       <motion.div
         ref={hostingAnimation.ref}
         initial={{ opacity: 0, y: 50 }}

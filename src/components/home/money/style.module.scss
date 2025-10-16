@@ -1,5 +1,5 @@
 .money_container {
-    width: min(650px, 100%);
+    width: min(750px, 100%);
     margin-inline: auto;
 }
 
@@ -127,6 +127,21 @@
 
     span {
         text-align: center;
+    }
+
+    &[data-first="true"] {
+        background-color: $surface-white;
+        
+        span {
+            color: $text-default;
+        }
+
+        .special_prize_text {
+            color: $text-black;
+            font-weight: 600;
+        }
+
+        margin-top: $spacing-32;
     }
 }
 

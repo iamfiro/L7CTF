@@ -28,10 +28,10 @@ export default function Header() {
               <a href="/" data-active={pathname === "/"}>
                 <Typo.Body>CTF</Typo.Body>
               </a>
-              <a href="winners" data-active={pathname === "/winners"}>
+              <a href="/winners" data-active={pathname === "/winners"}>
                 <Typo.Body>Winners</Typo.Body>
               </a>
-              <a href="creators" data-active={pathname === "/creators"}>
+              <a href="/creators" data-active={pathname === "/creators"}>
                 <Typo.Body>Creators</Typo.Body>
               </a>
               <a href={Link.discord} target="_blank">

@@ -93,6 +93,22 @@ export default function Money() {
           </VStack>
 
           <motion.div
+            className={s.special_prize}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={
+              tableAnimation.isInView
+                ? { opacity: 1, scale: 1 }
+                : { opacity: 0, scale: 0.9 }
+            }
+            transition={{ duration: 0.6, delay: 0.8 }}
+            data-first={true}
+          >
+            <Typo.Body className={s.special_prize_text}>
+              모든 부문 상위 3명에게 선린인터넷고등학교장상이 시상됩니다.
+            </Typo.Body>
+          </motion.div>
+
+          <motion.div
             ref={tableAnimation.ref}
             variants={tableAnimation.containerVariants}
             initial="hidden"
@@ -363,7 +379,7 @@ export default function Money() {
           ref={carouselAnimation.ref}
           {...carouselAnimation.motionProps}
         >
-          <Typo.BodyLarge style={{ marginBottom: 32 }}>
+          <Typo.BodyLarge style={{ marginBottom: 32, textAlign: "center" }}>
             이 외의 다양한 특별상이 준비되어 있어요
           </Typo.BodyLarge>
           <div className={s.carousel_container}>
