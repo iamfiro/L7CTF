@@ -76,7 +76,7 @@ export default function Money() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <VStack align={FlexAlign.Center}>
-            <Typo.BodyLarge>대회 상금</Typo.BodyLarge>
+            <Typo.BodyLarge>대회 총 상금</Typo.BodyLarge>
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={
@@ -119,8 +119,8 @@ export default function Money() {
                 <table className={s.table}>
                   <thead>
                     <tr>
-                      <th>직종</th>
-                      <th>구분</th>
+                      <th>부문</th>
+                      <th>순위</th>
                       <th>상금</th>
                       <th>상품</th>
                     </tr>
@@ -145,18 +145,18 @@ export default function Money() {
                     <tr className={s.group_high}>
                       <td rowSpan={3}>고등부</td>
                       <td>1등</td>
-                      <td>{extractCashAmount(Prize.middle.first.prize)}</td>
-                      <td>{extractGoods(Prize.middle.first.prize)}</td>
+                      <td>{extractCashAmount(Prize.high.first.prize)}</td>
+                      <td>{extractGoods(Prize.high.first.prize)}</td>
                     </tr>
                     <tr className={s.group_high}>
                       <td>2등</td>
-                      <td>{extractCashAmount(Prize.middle.second.prize)}</td>
-                      <td>{extractGoods(Prize.middle.second.prize)}</td>
+                      <td>{extractCashAmount(Prize.high.second.prize)}</td>
+                      <td>{extractGoods(Prize.high.second.prize)}</td>
                     </tr>
                     <tr className={s.group_high}>
                       <td>3등</td>
-                      <td>{extractCashAmount(Prize.middle.third.prize)}</td>
-                      <td>{extractGoods(Prize.middle.third.prize)}</td>
+                      <td>{extractCashAmount(Prize.high.third.prize)}</td>
+                      <td>{extractGoods(Prize.high.third.prize)}</td>
                     </tr>
                     <tr className={s.group_middle}>
                       <td rowSpan={3}>중등부</td>

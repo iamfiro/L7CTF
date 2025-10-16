@@ -283,7 +283,7 @@ export default function Hero() {
                   }}
                 >
                   <Typo.Body className={s.flag_text}>
-                    Layer7{`{m7s8zxn3@2025}`}
+                    Layer7{`{dhkwlqrkrhtlvek@2025}`}
                   </Typo.Body>
                 </motion.div>
               </>
@@ -306,7 +306,7 @@ export default function Hero() {
                   transition={{ duration: 2, ease: "easeOut" }}
                 >
                   <Typo.Body className={s.flag_text_green}>
-                    Layer7{`{gR33n-ctf}`}
+                    Layer7{`{0101010101010101010101}`}
                   </Typo.Body>
                 </motion.div>
               </>

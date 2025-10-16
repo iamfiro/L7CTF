@@ -127,8 +127,8 @@ export default function CompetitionAbout() {
                 transition={{ duration: 0.5, delay: 0.9 }}
               >
                 <Typo.Subtext className={s.eligibility_description}>
-                  * 부정행위, 서류증빙 미흡 등으로 인한 부적격팀 발생 시
-                  차상위팀 본선 진출
+                  * 부정행위 또는 서류 허위·미제출 등으로 인한 수상 부적격자 발생 시
+                  차순위 수상자 시상
                 </Typo.Subtext>
               </motion.div>
             </VStack>

@@ -24,14 +24,14 @@ export default function Home() {
       <Sponsor />
       <About />
       <Merit
-        text="문제 개쩐다는 그런 타이틀을 적어주세요"
-        description="설명을 적으시오"
-        image="/images/merit/merit_quiz.png"
+        text="재학생과 졸업생이 함께내는 문제"
+        description="선린인터넷고등학교 재학생과 졸업생이 함께 출제하여 높은 퀄리티의 문제를 제공합니다."
+        image="/images/merit/n1.png"
       />
       <Merit
-        text="문제 개쩐다는 그런 타이틀을 적어주세요"
-        description="설명을 적으시오"
-        image="/images/merit/merit_quiz.png"
+        text="다양한 해킹 분야의 문제"
+        description="Web, Reversing, Pwnable, AI, Misc 총 5개의 분야에 문제가 출제됩니다."
+        image="/images/merit/n2.png"
         reversed
       />
       <Calendar />
