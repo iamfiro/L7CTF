@@ -130,7 +130,7 @@ export default function Calendar() {
                 <Typo.Display className={s.card_title}>
                   대회 결과 발표
                 </Typo.Display>
-                <Typo.Body className={s.card_date}>11월 07일</Typo.Body>
+                <Typo.Body className={s.card_date}>11월 17일</Typo.Body>
               </VStack>
               <Printer className={s.card_icon} />
             </motion.article>
