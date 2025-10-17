@@ -244,9 +244,11 @@ export default function Money() {
                     </div>
                     <div className={s.card_row}>
                       <Typo.Body className={s.label}>상금</Typo.Body>
-                      <span>
-                        {extractCashAmount(Prize.general.second.prize)}
-                      </span>
+                      <Typo.Body>
+                        <span style={{ whiteSpace: "pre-line" }}>
+                          {extractCashAmount(Prize.general.second.prize)}
+                        </span>
+                      </Typo.Body>
                     </div>
                     <div className={s.card_row}>
                       <Typo.Body className={s.label}>상품</Typo.Body>
