@@ -1,5 +1,4 @@
-import { Light } from "@/components/ui";
-import { Footer, Header, Spacing } from "@/components/ui";
+import { Footer, Header, Light, Spacing } from "@/components/ui";
 import { WinnersList } from "@/components/winners";
 
 export default function Winner() {

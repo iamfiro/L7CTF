@@ -61,9 +61,11 @@ export default function Header() {
           </HStack>
 
           <div className={s.mobile_right}>
-            <Button className={s.mobile_ctf_button}>
-              Layer7 CTF 참가 신청하기
-            </Button>
+            <a href={Link.registration} target="_blank">
+              <Button className={s.mobile_ctf_button}>
+                Layer7 CTF 참가 신청하기
+              </Button>
+            </a>
             <button className={s.hamburger_menu} onClick={toggleMobileMenu}>
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -98,7 +100,13 @@ export default function Header() {
             >
               <Typo.Headline>Winners</Typo.Headline>
             </a>
-            <a href="#">
+            <a
+              href="/authors"
+              className={pathname === "/authors" ? s.active : ""}
+            >
+              <Typo.Headline>Authors</Typo.Headline>
+            </a>
+            <a href={Link.discord} target="_blank">
               <Typo.Headline>Discord</Typo.Headline>
               <ArrowUpRight />
             </a>
