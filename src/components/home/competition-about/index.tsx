@@ -1,7 +1,6 @@
-import { Download } from "lucide-react";
 import { motion } from "motion/react";
 
-import { Button, Section, Typo } from "@/components/ui";
+import { Section, Typo } from "@/components/ui";
 import { FlexAlign, HStack, VStack } from "@/components/ui/stack";
 import { Competition } from "@/data/competition";
 import { Link } from "@/data/link";
@@ -127,8 +126,8 @@ export default function CompetitionAbout() {
                 transition={{ duration: 0.5, delay: 0.9 }}
               >
                 <Typo.Subtext className={s.eligibility_description}>
-                  * 부정행위 또는 서류 허위·미제출 등으로 인한 수상 부적격자 발생 시
-                  차순위 수상자 시상
+                  * 부정행위 또는 서류 허위·미제출 등으로 인한 수상 부적격자
+                  발생 시 차순위 수상자 시상
                 </Typo.Subtext>
               </motion.div>
             </VStack>
